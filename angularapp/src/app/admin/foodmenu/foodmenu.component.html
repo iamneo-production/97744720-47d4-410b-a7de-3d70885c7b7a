@@ -1,0 +1,73 @@
+<app-homepage></app-homepage>
+<div id="adminFoodMenu" class="container">
+  <div class="container mt-5">
+    <button routerLink="/admin/addmenu" routerLinkActive="active" id="addItemButton">Add item</button>
+    <table class="table table-bordered mt-4" >
+      <thead class="thead">
+        <tr>
+          <th>Item Image</th>
+          <th>Item name</th>
+          <th>Item category</th>
+          <th>Price</th>
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr *ngFor="let item of itemdetails">
+          <td class="w-20"><img src={{item.itemimage}} alt="Image not found" width="150" height="70" /></td>
+          <td>{{item.itemname}}</td>
+          <td>{{item.itemcategory}}</td>
+          <td>{{item.price}}</td>
+          <td><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"  (click)="edititem(item)">Edit</button></td>
+          <td><button type="button" class="btn btn-danger" (click)="deleteItem(item)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title col text-center" id="exampleModalLabel">Edit Item</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container mt-5">
+          <div class="card mt-5" style="padding:20px">
+              <form #updateForm="ngForm">
+                  <div class="form-group">
+                      <label for="itemimage" >Enter Item Url:</label>
+                      <input type="text" #itemimage [(ngModel)]="itemtoupdate.itemimage" name="itemimage" id="itemimage" class="form-control" placeholder="enter Item url">
+                  </div>
+                  <div class="form-group">
+                      <label for="itemname" >Enter Item Name:</label>
+                      <input type="text" #itemname [(ngModel)]="itemtoupdate.itemname" name="itemname" id="itemname" class="form-control" placeholder="enter Item Name">
+                  </div>
+                  <div class="form-group">
+                      <label for="itemcategory" >Enter Item category:</label>
+                      <input type="text" #itemcategory [(ngModel)]="itemtoupdate.itemcategory" name="itemcategory" id="itemcategory" class="form-control" placeholder="enter Item category">
+                  </div>
+                  <div class="form-group">
+                      <label for="price" >Enter Item price:</label>
+                      <input type="number" #price [(ngModel)]="itemtoupdate.price" name="price" id="price" class="form-control" placeholder="enter Item price">
+                  </div>
+                  <div class="form-group mt-3">
+                      <input type="submit" value="submit" class="btn btn-primary w-100" data-dismiss="modal" (click)="updateItem()"/>
+                  </div>
+              </form>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
