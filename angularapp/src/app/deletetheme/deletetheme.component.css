@@ -1,0 +1,19 @@
+body {
+   
+    background: linear-gradient(135deg, #1246648c, #1246648c);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+.col-md-4{
+  padding-top: 1%;
+  background: linear-gradient(135deg, #1246648c, #1246648c);
+}
+.form{
+width: 320px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+  background-color: white;
+}
