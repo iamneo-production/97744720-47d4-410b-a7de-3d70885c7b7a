@@ -12,7 +12,7 @@
                 <th id="list-title"> Photographer Details</th>
                 <th id="list-title"> Theme Cost</th>
                 <th id="list-title"> Theme Description</th>
-                <th id="list-title"> Actions</th>
+                <th colspan="2" id="list-title">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +26,7 @@
                 <td id="list-title"> {{ theme.themeCost }} </td>
                 <td id="list-title"> {{ theme.themeDescription }}</td>
                 <button (click) = "updateTheme(theme.themeId)" class = "btn btn-info"> Update</button>
+                <button (click) = "deleteTheme(theme.themeId)" class = "btn btn-info"> Delete</button>
             </tr>
         </tbody>
     </table>

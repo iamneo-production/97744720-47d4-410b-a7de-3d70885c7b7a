@@ -8,7 +8,7 @@ import { ViewthemeComponent } from './viewtheme/viewtheme.component';
 
 const routes: Routes = [
   {path: 'admin/addtheme',component:AddthemeComponent},
-  {path: 'admin/deletetheme',component:DeletethemeComponent},
+  {path: 'admin/deletetheme/:id',component:DeletethemeComponent},
   {path: 'admin/viewtheme',component:ViewthemeComponent},
   {path:'admin/edittheme/:id',component:EdithemeComponent},
   { path: '', redirectTo: 'admin/addtheme' ,pathMatch:'full'}

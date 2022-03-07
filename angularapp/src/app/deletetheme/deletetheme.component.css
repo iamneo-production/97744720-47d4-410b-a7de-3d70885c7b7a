@@ -17,3 +17,6 @@ width: 320px;
   margin: 0;
   background-color: white;
 }
+.btn btn-info{
+  padding-right: 0cm;
+}

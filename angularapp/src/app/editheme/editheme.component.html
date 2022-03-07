@@ -3,7 +3,7 @@
     <form (ngSubmit) = "onSubmit()">
     
         <div class="form-group">
-            <label> themeName</label>
+            <label> Theme Name</label>
             <input type="text" class ="form-control" id = "themeName"
                 [(ngModel)] = "theme.themeName" name = "themeName" required #fullNameControl="ngModel">
                 <span class="help-block"
@@ -13,68 +13,68 @@
         </div>
     
         <div class="form-group">
-            <label>themeImageURL </label>
+            <label>Theme Image URL </label>
             <input type="text" class ="form-control" id = "themeImageURL"
-                [(ngModel)] = "theme.themeImageURL" name = "themeImageURL" required #fullNameControl="ngModel">
+                [(ngModel)] = "theme.themeImageURL" name = "themeImageURL" required #fullImageUrlControl="ngModel">
                 <span class="help-block"
-            *ngIf="fullNameControl.invalid && fullNameControl.touched">
-            Theme Name is required:
+            *ngIf="fullImageUrlControl.invalid && fullImageUrlControl.touched">
+            Theme Image URL is required:
           </span>
         </div>
     
         <div class="form-group">
-            <label>themeDescription</label>
+            <label>Theme Description</label>
             <input type="text" class ="form-control" id = "themeDescription"
-                [(ngModel)] = "theme.themeDescription" name = "themeDescription" required #fullNameControl="ngModel">
+                [(ngModel)] = "theme.themeDescription" name = "themeDescription" required #fullDescriptionControl="ngModel">
                 <span class="help-block"
-            *ngIf="fullNameControl.invalid && fullNameControl.touched">
-            Theme Name is required:
+            *ngIf="fullDescriptionControl.invalid && fullDescriptionControl.touched">
+            Theme Description is required:
           </span>
         </div>
 
         <div class="form-group">
-            <label>themePhotographer</label>
+            <label>Theme Photographer</label>
             <input type="text" class ="form-control" id = "themePhotographer"
-                [(ngModel)] = "theme.themePhotographer" name = "themePhotographer" required #fullNameControl="ngModel">
+                [(ngModel)] = "theme.themePhotographer" name = "themePhotographer" required #fullPhotogrprControl="ngModel">
                 <span class="help-block"
-            *ngIf="fullNameControl.invalid && fullNameControl.touched">
-            Theme Name is required:
+            *ngIf="fullPhotogrprControl.invalid && fullPhotogrprControl.touched">
+            Theme Photographer is required:
           </span>
         </div>
 
         <div class="form-group">
-            <label>themeVideographer</label>
+            <label>Theme Videographer</label>
             <input type="text" class ="form-control" id = "themeVideographer"
-                [(ngModel)] = "theme.themeVideographer" name = "themeVideographer" required #fullNameControl="ngModel">
+                [(ngModel)] = "theme.themeVideographer" name = "themeVideographer" required #fullVideogrpControl="ngModel">
                 <span class="help-block"
-            *ngIf="fullNameControl.invalid && fullNameControl.touched">
-            Theme Name is required:
+            *ngIf="fullVideogrpControl.invalid && fullVideogrpControl.touched">
+            Theme Videographer is required:
           </span>
         </div>
 
         <div class="form-group">
-            <label>themeReturnGift</label>
+            <label>Theme Return Gift</label>
             <input type="text" class ="form-control" id = "themeReturnGift"
-                [(ngModel)] = "theme.themeReturnGift" name = "themeReturnGift" required #fullNameControl="ngModel">
+                [(ngModel)] = "theme.themeReturnGift" name = "themeReturnGift" required #fullReturnGiftControl="ngModel">
                 <span class="help-block"
-            *ngIf="fullNameControl.invalid && fullNameControl.touched">
-            Theme Name is required:
+            *ngIf="fullReturnGiftControl.invalid && fullReturnGiftControl.touched">
+            Theme Return Gift is required:
           </span>
         </div>
 
         <div class="form-group">
-            <label>themeCost</label>
+            <label>Theme Cost</label>
             <input type="text" class ="form-control" id = "themeCost"
-                [(ngModel)] = "theme.themeCost" name = "themeCost" required #fullNameControl="ngModel">
+                [(ngModel)] = "theme.themeCost" name = "themeCost" required #fullCostControl="ngModel">
                 <span class="help-block"
-            *ngIf="fullNameControl.invalid && fullNameControl.touched">
-            Theme Name is required:
+            *ngIf="fullCostControl.invalid && fullCostControl.touched">
+            Theme Cost is required:
           </span>
         </div>
         <br>
         <br>
         <button class = "btn btn-success"  [disabled]="!theme.themeName || !theme.themeVideographer || !theme.themeImageURL 
         || !theme.themeReturnGift || !theme.themePhotographer || !theme.themeCost || !theme.themeDescription " type ="submit">Submit</button>
-    
+        <button (click)= "goToThemeList()" class="btn btn-info" id="back">Return</button>
     </form>
     </div> 

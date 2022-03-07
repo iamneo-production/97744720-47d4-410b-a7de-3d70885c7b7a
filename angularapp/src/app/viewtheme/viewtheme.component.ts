@@ -24,4 +24,7 @@ export class ViewthemeComponent implements OnInit {
   updateTheme(id: number){
     this.router.navigate(['/admin/edittheme', id]);
   }
+  deleteTheme(id: number){
+    this.router.navigate(['/admin/deletetheme', id]);
+  }
 }
