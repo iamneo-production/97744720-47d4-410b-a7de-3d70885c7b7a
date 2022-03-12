@@ -1,6 +1,7 @@
 package com.examly.springapp.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,29 +14,34 @@ public class FoodmenuService {
 	
 	@Autowired
 	private FoodmenuRepository foodmenurepository;	
-	public Foodmenu addItem(Foodmenu foodmenu)
+	
+	public MenuModel addMenu(MenuModel foodmenu)
 	{
 		return foodmenurepository.save(foodmenu);
 	}
 	
-	public List<Foodmenu> getItems()
+	public List<MenuModel> getMenu()
 	{
-		return (List<Foodmenu>) foodmenurepository.findAll();
+		return (List<MenuModel>) foodmenurepository.findAll();
 	}
 	
-	public void deleteItem(Integer sno)
+	public void deleteMenu(Integer foodMenuID)
 	{
-		foodmenurepository.deleteById(sno);
+		foodmenurepository.deleteById(foodMenuID);
 	}
-	
-	public Foodmenu upadteItem(Foodmenu foodmenu)
+	public Optional<MenuModel> getitem(Integer foodMenuID)
 	{
-		Integer sno=foodmenu.getSno();
-		Foodmenu item=foodmenurepository.findById(sno).get();
-		item.setItemimage(foodmenu.getItemimage());
-		item.setItemname(foodmenu.getItemname());
-		item.setItemcategory(foodmenu.getItemcategory());
-		item.setPrice(foodmenu.getPrice());
+		return foodmenurepository.findById(foodMenuID);
+	}
+	public MenuModel editMenu(MenuModel foodmenu)
+	{
+		Integer foodMenuID=foodmenu.getFoodMenuID();
+		MenuModel item=foodmenurepository.findById(foodMenuID).get();
+		item.setfoodMenuImage(foodmenu.getfoodMenuImage());
+		item.setFoodMenuItems(foodmenu.getFoodMenuItems());
+		item.setFoodMenuType(foodmenu.getFoodMenuType());
+		item.setFoodMenuCost(foodmenu.getFoodMenuCost());
 		return foodmenurepository.save(item);
 	}
 }
+

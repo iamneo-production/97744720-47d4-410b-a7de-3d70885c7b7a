@@ -1,6 +1,7 @@
-package com.examly.springapp.controller;
+package com.examly.springapp.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,35 +15,43 @@ import com.examly.springapp.Model.*;
 import com.examly.springapp.Service.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
 @CrossOrigin(allowedHeaders="*",origins="*")
+@RequestMapping("/admin")
 public class FoodmenuController {
 
 	@Autowired
 	private FoodmenuService foodmenuservice;
 	
-	@PostMapping("/additem")
-	public Foodmenu addItem(@RequestBody Foodmenu foodmenu)
+	@PostMapping("/addMenu")
+	public MenuModel addMenu(@RequestBody MenuModel foodmenu)
 	{
-		return foodmenuservice.addItem(foodmenu);
+		return foodmenuservice.addMenu(foodmenu);
 	}
 	
-	@GetMapping("/getitems")
-	public List<Foodmenu> getItems()
+	@GetMapping("/getMenu")
+	public List<MenuModel> getMenu()
 	{
-		return foodmenuservice.getItems();
+		return foodmenuservice.getMenu();
 	}
 	
-	@DeleteMapping("/deleteitem")
-	public void deleteItem(@RequestParam Integer sno)
+	@DeleteMapping("/deleteMenu")
+	public void deleteMenu(@RequestParam Integer foodMenuID)
 	{
-			foodmenuservice.deleteItem(sno);
+			foodmenuservice.deleteMenu(foodMenuID);
 	}
 	
-	@PutMapping("/updateitem")
-	public Foodmenu updateItem(@RequestBody Foodmenu foodmenu)
+	@GetMapping("/getitembyid")
+	public Optional<MenuModel> getitem(@RequestParam Integer foodMenuID)
 	{
-		return foodmenuservice.upadteItem(foodmenu);
+			return foodmenuservice.getitem(foodMenuID);
+	}
+	@PutMapping("/editMenu")
+	public MenuModel editMenu(@RequestBody MenuModel foodmenu)
+	{
+		return foodmenuservice.editMenu(foodmenu);
 	}
 }
+
