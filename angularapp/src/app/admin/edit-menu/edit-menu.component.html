@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <div class="card" mt="5" style="align-items: center">
+        <h1>Update Item</h1>
+    </div>
+    <div class="card mt-5" style="padding:20px">
+        <form #updateform="ngForm" onsubmit="return false;">
+            <div class="form-group">
+                <label for="itemimage" >Enter Item Url:</label>
+                <input type="text" required #itemimage [(ngModel)]="itemtoupdate.foodMenuImage" name="itemimage" id="itemimage" class="form-control" placeholder="Enter Item url" #itmimage="ngModel">
+                <div *ngIf="itmimage.invalid" id="formcss">*Item name is required</div>
+            </div>
+            <div class="form-group">
+                <label for="itemname" >Enter Item Name:</label>
+                <input type="text" pattern="^[a-zA-Z]+\_?[0-9]*$" required #itemname [(ngModel)]="itemtoupdate.foodMenuItems" name="itemname" id="itemname" class="form-control" placeholder="Enter Item Name" #itmname="ngModel">
+                <div *ngIf="itmname.touched" id="formcss">
+                <div *ngIf="itmname.errors?.required">*Item name is required</div>
+                <div *ngIf="itmname.errors?.pattern">*It accepts only alphanumerical characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="itemcategory" >Enter Item category:</label>
+                <select (change)="changeitemcategory($event)" formControlName="itemcategory">
+                    <option disabled>--Select option--</option>
+                    <option *ngFor="let itm of itmcat" [value]="itm.Name" [attr.selected]="itm.Name == selectedvalue?true:null">{{itm.Name}}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="price" >Enter Item price:</label>
+                <input type="text" pattern="^[0-9]+$" required #price [(ngModel)]="itemtoupdate.foodMenuCost" name="price" id="price" class="form-control" placeholder="Enter Item price" #itmprice="ngModel">
+                <div *ngIf="itmprice.touched" id="formcss">
+                    <div *ngIf="itmprice.errors?.required">*Item price is required</div>
+                    <div *ngIf="itmprice.errors?.pattern">*It accepts only numbers</div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" [disabled]="updateform.invalid" value="Submit" routerLink="/admin/foodmenu" class="btn btn-primary w-100" (click)="updateItem()">
+            </div>
+        </form>
+    </div>
+</div>

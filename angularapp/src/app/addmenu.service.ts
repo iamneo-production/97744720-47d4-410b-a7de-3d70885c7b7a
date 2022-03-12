@@ -9,18 +9,22 @@ export class AddmenuService {
   addmenuservice: any;
 
   constructor(private http: HttpClient) { }
-  api = "https://8080-dfcaaeacadedcedbeccabcebdcdedfbabbaad.examlyiopb.examly.io";
+  api = "https://8080-dfcaaeacadedcedbeccabcebdcdedfbabbaad.examlyiopb.examly.io/admin";
   public addItem(itemdata: any) {
-    return this.http.post(this.api + '/additem', itemdata);
+    return this.http.post(this.api + '/addMenu', itemdata);
+  }
+  public getitembyid(foodMenuID:any)
+  {
+    return this.http.get(this.api+'/getitembyid?foodMenuID='+foodMenuID);
   }
   public getItems() {
-    return this.http.get(this.api + '/getitems');
+    return this.http.get(this.api + '/getMenu');
   }
-  public deleteItem(sno: any) {
-    return this.http.delete(this.api + '/deleteitem?sno=' + sno);
+  public deleteItem(foodMenuID: any) {
+    return this.http.delete(this.api + '/deleteMenu?foodMenuID=' + foodMenuID);
   }
   public updateItem(itemdata:any)
   {
-    return this.http.put(this.api+'/updateitem',itemdata);
+    return this.http.put(this.api+'/editMenu',itemdata);
   }
 }

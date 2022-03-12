@@ -1,0 +1,68 @@
+<div class="container mt-5">
+    <div class="card" mt="5" style="align-items: center">
+        <h1>Add Item</h1>
+    </div>
+    <div class="card mt-5" style="padding:20px">
+        <form [formGroup]="additemform" #localform="ngForm" onsubmit="return false;">
+            <div class="form-group">
+                <label for="foodMenuImage" >Enter Item Url:</label>
+                <input formControlName="foodMenuImage" type="text" #foodMenuImage (ngModel)="foodMenuImage" name="foodMenuImage" id="foodMenuImage" class="form-control" placeholder="Enter Item url" [class.is-invalid]="additemform.get('foodMenuImage')?.invalid && (additemform.get('foodMenuImage')?.touched ||localform.submitted)">
+                <div class="invalid-feedback">*Please Enter the Image Url</div>
+            </div>
+            <div class="form-group">
+                <label for="foodMenuItems" >Enter Item Name:</label>
+                <input formControlName="foodMenuItems" type="text" #foodMenuItems (ngModel)="foodMenuItems" name="foodMenuItems" id="foodMenuItems" class="form-control" placeholder="Enter Item Name" [class.is-invalid]="additemform.get('foodMenuItems')?.invalid && (additemform.get('foodMenuItems')?.touched || localform.submitted)">
+                <div class="invalid-feedback">
+                    <div *ngIf="additemform.get('foodMenuItems')?.hasError('pattern')">*It accepts only alphanumeric characters</div>
+                    <div *ngIf="additemform.get('foodMenuItems')?.hasError('required')">*Please Enter name of the item</div>
+                </div>
+            </div>
+            <!--<div class="form-group">
+                <label for="itemcategory" >Enter Item category:</label>
+                <input formControlName="itemcategory" type="text" #itemcategory (ngModel)="itemcategory" name="itemcategory" id="itemcategory" class="form-control" placeholder="Enter Item category" [class.is-invalid]="additemform.get('itemcategory')?.invalid && localform.submitted">
+                <div class="invalid-feedback">*Please Enter the category of the Item</div>
+            </div>>!-->
+            <div class="form-group">
+                <label for="foodMenuType" >Enter Item category:</label>
+                <select (change)="changeitemcategory($event)" formControlName="foodMenuType" [class.is-invalid]="additemform.get('foodMenuType')?.invalid && (additemform.get('foodMenuType')?.touched || localform.submitted)">
+                    <option [value]="null" disabled>--Select Item category--</option>
+                    <option *ngFor="let itm of itmcat" [value]="itm.Name">{{itm.Name}}</option>
+                </select>
+                <div class="invalid-feedback">*Please Select itemcategory from dropdown</div>
+            </div>
+            <div class="form-group">
+                <label for="foodMenuCost" >Enter Item price:</label>
+                <input type="text" formControlName="foodMenuCost" #foodMenuCost (ngModel)="foodMenuCost" name="foodMenuCost" id="foodMenuCost" class="form-control" placeholder="Enter Item price" [class.is-invalid]="additemform.get('foodMenuCost')?.invalid && (additemform.get('foodMenuCost')?.touched || localform.submitted)">
+                <div class="invalid-feedback">
+                    <div *ngIf="additemform.get('foodMenuCost')?.hasError('pattern')">*please enter only numbers</div>
+                    <div *ngIf="additemform.get('foodMenuCost')?.hasError('required')">*Please Enter the price of item</div>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" [routerLink]="additemform.valid==true ? ['/admin/foodmenu']:[]" routerLinkActive="active" value="Add Item" class="btn btn-primary w-100" (click)="submitForm(additemform)">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class=" container mt-5">
+    <table class="table table-bordered">
+      <thead class="thead">
+        <tr>
+          <th>Item Image</th>
+          <th>Item name</th>
+          <th>Item category</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr *ngFor="let item of itemdetails">
+            <td>{{item.foodMenuImage}}</td>
+            <td>{{item.foodMenuItems}}</td>
+            <td>{{item.foodMenuType}}</td>
+            <td>{{item.foodMenuCost}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

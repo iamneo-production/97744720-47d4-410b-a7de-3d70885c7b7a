@@ -4,8 +4,9 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './user/home/home.component';
 import { HomepageComponent } from './admin/homepage/homepage.component';
-import { AddmenuComponent } from './admin/addMenu/addmenu.component';
+import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { FoodmenuComponent } from './admin/foodmenu/foodmenu.component';
+import { EditMenuComponent } from './admin/edit-menu/edit-menu.component';
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'admin/homepage',component:HomepageComponent},
   {path:'admin/foodmenu',component:FoodmenuComponent},
   {path:'admin/addmenu',component:AddmenuComponent},
+  {path:'admin/edit-menu/:foodMenuID',component:EditMenuComponent},
   { path: '', redirectTo: '/login' ,pathMatch:'full'}
 ];
 

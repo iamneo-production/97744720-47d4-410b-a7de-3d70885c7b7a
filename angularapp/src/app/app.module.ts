@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './admin/homepage/homepage.component';
 import { FoodmenuComponent } from './admin/foodmenu/foodmenu.component';
-import { AddmenuComponent } from './admin/addMenu/addmenu.component';
+import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
+import { EditMenuComponent } from './admin/edit-menu/edit-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { SignupComponent } from './signup/signup.component';
     SignupComponent,
     HomepageComponent,
     FoodmenuComponent,
-    AddmenuComponent
+    AddmenuComponent,
+    EditMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,10 @@ import { SignupComponent } from './signup/signup.component';
     FormsModule, 
     ReactiveFormsModule, 
     HttpClientModule
+  ],
+  exports:
+  [
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
