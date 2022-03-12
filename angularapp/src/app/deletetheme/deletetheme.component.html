@@ -6,14 +6,15 @@
   <body>
     <div class="form">
     <form (ngSubmit) = "onSubmit()">
-      <h3>Are you sure deleting this Theme??</h3>
+      <h3>Are you sure deleting this {{theme.themeName}} theme ??</h3>
       <br>
-      <h4>{{theme.themeId}}</h4>
       <br>
      <fieldset>
-      <button (click) = "deleteTheme(theme.themeId)" class = "btn btn-info  mr-1" id="delete" type ="submit"> Yes</button>
+      <div class="btn-toolbar">
+      <button  (click) = "deleteTheme(theme.themeId)" class = "btn btn-info " id="delete" type ="submit"> Yes</button>
       <button (click) = "goToThemeList()" class = "btn btn-info" id="No"> No</button>
-      </fieldset>
+      </div>  
+    </fieldset>
     </form>
   </div>
     </body>

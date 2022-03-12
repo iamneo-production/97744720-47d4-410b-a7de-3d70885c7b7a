@@ -22,6 +22,7 @@ export class EdithemeComponent implements OnInit {
       this.theme = data;
      (error:any) => console.log(error)});
   }
+  
 
   onSubmit(){
     this.themeService.updateTheme(this.id, this.theme).subscribe( data =>{

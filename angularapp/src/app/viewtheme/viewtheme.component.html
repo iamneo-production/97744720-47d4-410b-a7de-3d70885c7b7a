@@ -25,10 +25,9 @@
                 <td id="list-title"> {{ theme.themePhotographer }} </td>
                 <td id="list-title"> {{ theme.themeCost }} </td>
                 <td id="list-title"> {{ theme.themeDescription }}</td>
-                <button (click) = "updateTheme(theme.themeId)" class = "btn btn-info"> Update</button>
-                <button (click) = "deleteTheme(theme.themeId)" class = "btn btn-info"> Delete</button>
+                <button type="button" (click) = "updateTheme(theme.themeId)" class = "btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>
+                <button type="button" (click) = "deleteTheme(theme.themeId)" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
             </tr>
         </tbody>
     </table>
     </div>
-    </body>
