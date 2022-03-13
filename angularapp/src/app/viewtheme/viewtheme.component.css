@@ -1,3 +1,51 @@
+#XYZ {
+    text-decoration: none;
+    margin-right: 40px;
+    color: #ffffff;
+    
+    position: relative;
+    left: 10px;
+    bottom: 5px;
+  }
+  #adminTheme {
+    text-decoration: none;
+    margin-right: 50px;
+    color: #ffffff;
+    font-size: 20px;
+  }
+  #adminFoodMenu {
+    text-decoration: none;
+    margin-right: 50px;
+    color: #ffffff;
+  }
+  #adminAddOns {
+    text-decoration: none;
+    margin-right: 50px;
+    color: #ffffff;
+  }
+  #logout {
+    text-decoration: none;
+    color: #ffffff;
+    position: absolute;
+    right: 40px;
+  }
+  #adminFoodMenu:hover {
+    font-size: 25px;
+  }
+  #adminAddOns:hover {
+    font-size: 25px;
+  }
+  #adminTheme:hover {
+    font-size: 25px;
+  }
+  #logout:hover {
+    font-size: 25px;
+  }
+  .nav {
+    background-color: #0068c9;
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
 body{
     height: 100vh;
     display: flex;

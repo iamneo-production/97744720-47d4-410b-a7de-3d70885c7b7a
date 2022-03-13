@@ -1,7 +1,17 @@
+<div id="abc" class="nav">
+    <a href="" id="XYZ">Business Meet Event</a>
+    <a href="" id="adminTheme">Theme</a>
+    <a href="" id="adminFoodMenu">Food Menu</a>
+    <a href="" id="adminAddOns">Add Add-ons</a>
+    <a href="#" id="logout" routerLink="/login" routerLinkActive="active">Logout</a>
+  </div>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
 <body>
     <div class="container-sm border" id="list">
     <h2> Theme List</h2>
-    <table class = "table table-striped">
+    <table class = "table table-bordered">
         <thead>
             <tr>
                 <th id="list-title">Theme Id</th>
@@ -25,8 +35,9 @@
                 <td id="list-title"> {{ theme.themePhotographer }} </td>
                 <td id="list-title"> {{ theme.themeCost }} </td>
                 <td id="list-title"> {{ theme.themeDescription }}</td>
-                <button type="button" (click) = "updateTheme(theme.themeId)" class = "btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>
-                <button type="button" (click) = "deleteTheme(theme.themeId)" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                
+                <td><button type="button" (click) = "updateTheme(theme.themeId)" class = "btn btn-primary"><i class="fa fa-pencil"></i></button></td>
+                <td><button type="button" (click) = "deleteTheme(theme.themeId)" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
             </tr>
         </tbody>
     </table>
