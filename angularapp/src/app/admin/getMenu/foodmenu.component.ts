@@ -53,7 +53,7 @@ export class FoodmenuComponent implements OnInit {
   }
   ngOnInit(): void {
     this.getitemDetails();
+    this.share.setStatus([0,1,0]);
   }
-
 }
 

@@ -4,9 +4,9 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './user/home/home.component';
 import { HomepageComponent } from './admin/homepage/homepage.component';
-import { AddmenuComponent } from './admin/addmenu/addmenu.component';
-import { FoodmenuComponent } from './admin/foodmenu/foodmenu.component';
-import { EditMenuComponent } from './admin/edit-menu/edit-menu.component';
+import { AddmenuComponent } from './admin/addMenu/addmenu.component';
+import { FoodmenuComponent } from './admin/getMenu/foodmenu.component';
+import { EditMenuComponent } from './admin/editMenu/edit-menu.component';
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},

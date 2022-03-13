@@ -21,7 +21,7 @@ export class AddmenuService {
     return this.http.get(this.api + '/getMenu');
   }
   public deleteItem(foodMenuID: any) {
-    return this.http.delete(this.api + '/deleteMenu?foodMenuID=' + foodMenuID);
+    return this.http.delete(this.api + '/deleteMenu/' + foodMenuID);
   }
   public updateItem(itemdata:any)
   {
