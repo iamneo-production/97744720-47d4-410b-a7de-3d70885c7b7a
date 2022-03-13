@@ -17,11 +17,6 @@
                     <div *ngIf="additemform.get('foodMenuItems')?.hasError('required')">*Please Enter name of the item</div>
                 </div>
             </div>
-            <!--<div class="form-group">
-                <label for="itemcategory" >Enter Item category:</label>
-                <input formControlName="itemcategory" type="text" #itemcategory (ngModel)="itemcategory" name="itemcategory" id="itemcategory" class="form-control" placeholder="Enter Item category" [class.is-invalid]="additemform.get('itemcategory')?.invalid && localform.submitted">
-                <div class="invalid-feedback">*Please Enter the category of the Item</div>
-            </div>>!-->
             <div class="form-group">
                 <label for="foodMenuType" >Enter Item category:</label>
                 <select (change)="changeitemcategory($event)" formControlName="foodMenuType" [class.is-invalid]="additemform.get('foodMenuType')?.invalid && (additemform.get('foodMenuType')?.touched || localform.submitted)">
@@ -39,30 +34,9 @@
                 </div>
             </div>
             <div class="form-group mt-3">
-                <input type="submit" [routerLink]="additemform.valid==true ? ['/admin/foodmenu']:[]" routerLinkActive="active" value="Add Item" class="btn btn-primary w-100" (click)="submitForm(additemform)">
+                <input type="submit" [routerLink]="additemform.valid==true ? ['/admin/getMenu']:[]" routerLinkActive="active" value="Add Item" class="btn btn-primary w-100" (click)="submitForm(additemform)">
             </div>
         </form>
     </div>
 </div>
 
-
-<div class=" container mt-5">
-    <table class="table table-bordered">
-      <thead class="thead">
-        <tr>
-          <th>Item Image</th>
-          <th>Item name</th>
-          <th>Item category</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody class="tbody">
-        <tr *ngFor="let item of itemdetails">
-            <td>{{item.foodMenuImage}}</td>
-            <td>{{item.foodMenuItems}}</td>
-            <td>{{item.foodMenuType}}</td>
-            <td>{{item.foodMenuCost}}</td>
-        </tr>
-      </tbody>
-    </table>
-</div>

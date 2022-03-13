@@ -1,7 +1,7 @@
 <div id="abc" class="nav pt-4 pb-4 pl-5">
     <a href="" id="XYZ">Business Meet Event</a>
     <a href="" class="theme" [ngClass]="status[0]==1?'theme1':'theme'" id="adminTheme">Add Theme</a>
-    <a href="" class="foodmenu" [ngClass]="status[1]==1?'foodmenu1':'foodmenu'" routerLink="/admin/foodmenu" routerLinkActive="active" id="adminFoodMenu" (click)="getitems()">Food Menu</a>
+    <a href="" class="foodmenu" [ngClass]="status[1]==1?'foodmenu1':'foodmenu'" routerLink="/admin/getMenu" routerLinkActive="active" id="adminFoodMenu" (click)="getitems()">Food Menu</a>
     <a href="" class="addons" [ngClass]="status[2]==1?'addons1':'addons'" id="adminAddOns">Add Add-ons</a>
     <a href="" routerLink="/login" routerLinkActive="active" id="logout">Logout</a>
   </div>

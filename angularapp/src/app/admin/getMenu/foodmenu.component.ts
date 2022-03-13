@@ -49,7 +49,7 @@ export class FoodmenuComponent implements OnInit {
   {
     this.share.setObj(itemobject);
     this.getitemDetails();
-    this.router.navigate(['admin/edit-menu',itemobject.foodMenuID]);
+    this.router.navigate(['admin/editMenu',itemobject.foodMenuID]);
   }
   ngOnInit(): void {
     this.getitemDetails();

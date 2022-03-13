@@ -12,9 +12,9 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'user/home',component:HomeComponent},
   {path:'admin/homepage',component:HomepageComponent},
-  {path:'admin/foodmenu',component:FoodmenuComponent},
-  {path:'admin/addmenu',component:AddmenuComponent},
-  {path:'admin/edit-menu/:foodMenuID',component:EditMenuComponent},
+  {path:'admin/getMenu',component:FoodmenuComponent},
+  {path:'admin/addMenu',component:AddmenuComponent},
+  {path:'admin/editMenu/:foodMenuID',component:EditMenuComponent},
   { path: '', redirectTo: '/login' ,pathMatch:'full'}
 ];
 
