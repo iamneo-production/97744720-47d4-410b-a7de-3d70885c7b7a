@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,8 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.examly.springapp.Model.*;
 import com.examly.springapp.Service.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 @CrossOrigin(allowedHeaders="*",origins="*")
@@ -37,11 +38,10 @@ public class FoodmenuController {
 		return foodmenuservice.getMenu();
 	}
 	
-	@DeleteMapping("/deleteMenu")
-	public void deleteMenu(@RequestParam Integer foodMenuID)
-	{
-			foodmenuservice.deleteMenu(foodMenuID);
-	}
+	@RequestMapping(value = "/deleteMenu/{id}", method = RequestMethod.DELETE)
+	public void deleteLocation(@PathVariable Integer id) {
+		foodmenuservice.deleteMenu(id);
+	 }
 	
 	@GetMapping("/getitembyid")
 	public Optional<MenuModel> getitem(@RequestParam Integer foodMenuID)
