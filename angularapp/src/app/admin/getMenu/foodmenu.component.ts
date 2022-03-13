@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { AddmenuService } from 'src/app/addmenu.service';
-import { SharedMenuAndItemService } from 'src/app/shared-menu-and-item.service';
+import { AddmenuService } from 'src/app/common.service';
+import { SharedMenuAndItemService } from 'src/app/shared.service';
 import {ActivatedRoute,Router} from '@angular/router';
 @Component({
   selector: 'app-foodmenu',

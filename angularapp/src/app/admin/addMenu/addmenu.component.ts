@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, NgForm,Validators,FormBuilder } from '@angular/forms';
-import { AddmenuService } from 'src/app/addmenu.service';
-import { SharedMenuAndItemService } from 'src/app/shared-menu-and-item.service';
+import { AddmenuService } from 'src/app/common.service';
+import { SharedMenuAndItemService } from 'src/app/shared.service';
 
 
 @Component({

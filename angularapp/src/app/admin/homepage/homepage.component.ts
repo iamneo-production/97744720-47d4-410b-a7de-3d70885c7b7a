@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedMenuAndItemService } from 'src/app/shared-menu-and-item.service';
+import { SharedMenuAndItemService } from 'src/app/shared.service';
 import {NgControl, NgForm,FormBuilder} from '@angular/forms';
 
 @Component({

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AddmenuService } from './addmenu.service';
+import { AddmenuService } from './common.service';
 
 describe('AddmenuService', () => {
   let service: AddmenuService;

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgControl, NgForm,FormBuilder,ReactiveFormsModule} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { AddmenuService } from 'src/app/addmenu.service';
-import { SharedMenuAndItemService } from 'src/app/shared-menu-and-item.service';
+import { AddmenuService } from 'src/app/common.service';
+import { SharedMenuAndItemService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-edit-menu',

@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SharedMenuAndItemService } from './shared-menu-and-item.service';
+import { SharedMenuAndItemService } from './shared.service';
 
 describe('SharedMenuAndItemService', () => {
   let service: SharedMenuAndItemService;
