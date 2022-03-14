@@ -10,6 +10,7 @@ import { AddmenuComponent } from './admin/addMenu/addmenu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { EditMenuComponent } from './admin/editMenu/edit-menu.component';
+import { DeleteMenuComponent } from './admin/deleteMenu/delete-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { EditMenuComponent } from './admin/editMenu/edit-menu.component';
     HomepageComponent,
     FoodmenuComponent,
     AddmenuComponent,
-    EditMenuComponent
+    EditMenuComponent,
+    DeleteMenuComponent
   ],
   imports: [
     BrowserModule,

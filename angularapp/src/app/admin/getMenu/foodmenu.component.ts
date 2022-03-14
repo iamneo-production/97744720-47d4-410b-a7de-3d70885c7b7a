@@ -14,6 +14,7 @@ export class FoodmenuComponent implements OnInit {
   {
     this.itm=item.foodMenuItems;
     this.share.setObj(item);
+    this.router.navigate(['admin/deleteMenu',item.foodMenuID]);
   }
   itemtoupdate=
   {

@@ -7,6 +7,7 @@ import { HomepageComponent } from './admin/homepage/homepage.component';
 import { AddmenuComponent } from './admin/addMenu/addmenu.component';
 import { FoodmenuComponent } from './admin/getMenu/foodmenu.component';
 import { EditMenuComponent } from './admin/editMenu/edit-menu.component';
+import { DeleteMenuComponent } from './admin/deleteMenu/delete-menu.component';
 const routes: Routes = [
   {path: 'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path:'admin/getMenu',component:FoodmenuComponent},
   {path:'admin/addMenu',component:AddmenuComponent},
   {path:'admin/editMenu/:foodMenuID',component:EditMenuComponent},
+  {path:'admin/deleteMenu/:foodMenuID',component:DeleteMenuComponent},
   { path: '', redirectTo: '/login' ,pathMatch:'full'}
 ];
 
