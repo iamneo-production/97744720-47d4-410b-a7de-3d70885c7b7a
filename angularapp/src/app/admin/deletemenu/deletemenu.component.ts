@@ -3,12 +3,12 @@ import { AddmenuService } from 'src/app/common.service';
 import { SharedMenuAndItemService } from 'src/app/shared.service';
 
 @Component({
-  selector: 'app-delete-menu',
-  templateUrl: './delete-menu.component.html',
-  styleUrls: ['./delete-menu.component.css']
+  selector: 'app-deletemenu',
+  templateUrl: './deletemenu.component.html',
+  styleUrls: ['./deletemenu.component.css']
 })
-export class DeleteMenuComponent implements OnInit {
-
+export class DeletemenuComponent implements OnInit {
+  itemname:any=null;
   constructor(private share: SharedMenuAndItemService, private addmenuservice: AddmenuService) { }
   deleteItem() {
     this.addmenuservice.deleteItem(this.share.getObj().foodMenuID).subscribe(
@@ -22,6 +22,8 @@ export class DeleteMenuComponent implements OnInit {
 
   ngOnInit(): void {
     document.getElementById("openModalButton").click();
+    this.itemname=this.share.getObj().foodMenuItems;
   }
+
 
 }

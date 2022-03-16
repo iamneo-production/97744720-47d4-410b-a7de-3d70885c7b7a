@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import {NgControl, NgForm,FormBuilder,ReactiveFormsModule} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AddmenuService } from 'src/app/common.service';
 import { SharedMenuAndItemService } from 'src/app/shared.service';
 
 @Component({
-  selector: 'app-edit-menu',
-  templateUrl: './edit-menu.component.html',
-  styleUrls: ['./edit-menu.component.css']
+  selector: 'app-editmenu',
+  templateUrl: './editmenu.component.html',
+  styleUrls: ['./editmenu.component.css']
 })
-export class EditMenuComponent implements OnInit {
+export class EditmenuComponent implements OnInit {
+
   foodMenuID!:number;
   updateform:any=NgForm;
   selectedvalue:any;
@@ -57,5 +58,5 @@ export class EditMenuComponent implements OnInit {
     foodMenuType:"",
     foodMenuCost:""
   }
- }
 
+}

@@ -10,10 +10,10 @@
           </button>
         </div>
         <div class="modal-body text-center">
-          <h2>Are you sure You want to delete</h2>
+          <h2>Are you sure You want to delete {{itemname}}</h2>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">NO</button>
+          <button type="button" class="btn btn-secondary btn-lg" routerLink="/admin/getMenu" data-dismiss="modal">NO</button>
           <button type="button" class="btn btn-primary btn-lg" routerLink="/admin/getMenu" data-dismiss="modal" (click)="deleteItem()">Yes</button>
         </div>
       </div>

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteMenuComponent } from './delete-menu.component';
+import { GetmenuComponent } from './getmenu.component';
 
-describe('DeleteMenuComponent', () => {
-  let component: DeleteMenuComponent;
-  let fixture: ComponentFixture<DeleteMenuComponent>;
+describe('GetmenuComponent', () => {
+  let component: GetmenuComponent;
+  let fixture: ComponentFixture<GetmenuComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteMenuComponent ]
+      declarations: [ GetmenuComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeleteMenuComponent);
+    fixture = TestBed.createComponent(GetmenuComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

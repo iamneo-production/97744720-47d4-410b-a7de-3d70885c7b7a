@@ -1,13 +1,16 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AddmenuService } from 'src/app/common.service';
 import { SharedMenuAndItemService } from 'src/app/shared.service';
-import {ActivatedRoute,Router} from '@angular/router';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 @Component({
-  selector: 'app-foodmenu',
-  templateUrl: './foodmenu.component.html',
-  styleUrls: ['./foodmenu.component.css']
+  selector: 'app-getmenu',
+  templateUrl: './getmenu.component.html',
+  styleUrls: ['./getmenu.component.css']
 })
-export class FoodmenuComponent implements OnInit {
+export class GetmenuComponent implements OnInit {
+
   itemdetails: any = null;
   itm:any=null;
   setitmname(item:any)
@@ -56,5 +59,5 @@ export class FoodmenuComponent implements OnInit {
     this.getitemDetails();
     this.share.setStatus([0,1,0]);
   }
-}
 
+}

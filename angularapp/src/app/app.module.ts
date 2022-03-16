@@ -5,22 +5,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './admin/homepage/homepage.component';
-import { FoodmenuComponent } from './admin/getMenu/foodmenu.component';
-import { AddmenuComponent } from './admin/addMenu/addmenu.component';
+import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
-import { EditMenuComponent } from './admin/editMenu/edit-menu.component';
-import { DeleteMenuComponent } from './admin/deleteMenu/delete-menu.component';
+import { GetmenuComponent } from './admin/getmenu/getmenu.component';
+import { DeletemenuComponent } from './admin/deletemenu/deletemenu.component';
+import { EditmenuComponent } from './admin/editmenu/editmenu.component';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
     HomepageComponent,
-    FoodmenuComponent,
+    GetmenuComponent,
     AddmenuComponent,
-    EditMenuComponent,
-    DeleteMenuComponent
+    DeletemenuComponent,
+    EditmenuComponent
   ],
   imports: [
     BrowserModule,
