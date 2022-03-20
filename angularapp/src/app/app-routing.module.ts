@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddthemeComponent } from './addtheme/addtheme.component';
 import { DeletethemeComponent } from './deletetheme/deletetheme.component';
@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'admin/viewtheme',component:ViewthemeComponent},
   {path:'admin/edittheme/:id',component:EdithemeComponent},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
