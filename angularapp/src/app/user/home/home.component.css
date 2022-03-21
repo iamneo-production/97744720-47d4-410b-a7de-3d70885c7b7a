@@ -1,0 +1,37 @@
+#XYZ {
+    text-decoration: none;
+    margin-right: 40px;
+    color: #ffffff;
+    font-size: 20px;
+    position: relative;
+    left: 10px;
+    bottom: 5px;
+  }
+  #UserBookEvent {
+    text-decoration: none;
+    margin-right: 40px;
+    color: #ffffff;
+  }
+  #UserViewBookEvent {
+    text-decoration: none;
+    margin-right: 50px;
+    color: #ffffff;
+  }
+  #logout {
+    text-decoration: none;
+    color: #ffffff;
+    position: absolute;
+    right: 40px;
+  }
+  #UserBookEvent:hover {
+    font-size: 25px;
+  }
+  #UserViewBookEvent:hover {
+    font-size: 25px;
+  }
+  .nav {
+    background-color: #0068c9;
+    padding-top: 20px;
+    padding-bottom: 5px;
+  }
+  

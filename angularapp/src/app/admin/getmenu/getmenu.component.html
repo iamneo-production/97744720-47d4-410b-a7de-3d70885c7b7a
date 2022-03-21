@@ -1,0 +1,49 @@
+<app-homepage></app-homepage>
+<div id="adminFoodMenu" class="container">
+  <button routerLink="/admin/addMenu" routerLinkActive="active" id="addItemButton">Add item</button>
+  <div class="container mt-5">
+    <table class="table table-bordered">
+      <thead class="thead">
+        <tr>
+          <th>Item Image</th>
+          <th>Item name</th>
+          <th>Item category</th>
+          <th>Price</th>
+          <th colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody class="tbody">
+        <tr *ngFor="let item of itemdetails">
+          <td class="w-20"><img src={{item.foodMenuImage}} alt="Image not found" width="150" height="70" /></td>
+          <td>{{item.foodMenuItems}}</td>
+          <td>{{item.foodMenuType}}</td>
+          <td>{{item.foodMenuCost}}</td>
+          <td><button type="button" class="btn btn-primary" (click)="edititem(item)"><i class="fa-regular fa-pen-to-square"></i></button></td>
+          <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" (click)="setitmname(item)"><i class="fa-solid fa-trash"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h5 class="modal-title w-100" id="exampleModalLabel">Delete Item</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center">
+        <h2>Are you sure You want to delete {{itm}}</h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary btn-lg" data-dismiss="modal">NO</button>
+        <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal" (click)="deleteItem()">Yes</button>
+      </div>
+    </div>
+  </div>
+</div>
