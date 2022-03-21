@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SharedMenuAndItemService } from '../shared.service';
 import { Theme } from '../theme';
 import { ThemeService } from '../theme.service';
 
@@ -11,10 +12,11 @@ import { ThemeService } from '../theme.service';
 export class ViewthemeComponent implements OnInit {
   themes!: Theme[];
   constructor(private themeService: ThemeService,
-    private router:Router) { }
+    private router:Router,private share:SharedMenuAndItemService) { }
 
   ngOnInit(): void {
     this.getthemes();
+    this.share.setStatus([1,0,0]);
   }
   private getthemes(){
     this.themeService.getThemeList().subscribe(data => {
