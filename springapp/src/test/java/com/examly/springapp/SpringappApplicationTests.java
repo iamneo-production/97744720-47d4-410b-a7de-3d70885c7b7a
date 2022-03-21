@@ -1,6 +1,7 @@
 package com.examly.springapp;
 
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 //import org.junit.Test;
@@ -89,7 +90,7 @@ class SpringappApplicationTests {
     public void BE_Update_FoodMenu() throws Exception {
         String newFoodMenu = "{\"foodMenuID\":\"01\",\"foodMenuType\":\"ABC\",\"foodMenuItems\":\"abcd\",\"foodMenuCost\":\"25000\"}";
         mockMvc.perform(MockMvcRequestBuilders.put("/admin/editMenu")
-		.param("1")
+		.param("foodMenuID","01")
 		.contentType(MediaType.APPLICATION_JSON)
 		.content(newFoodMenu)
 		.accept(MediaType.APPLICATION_JSON))
