@@ -9,6 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { GetmenuComponent } from './admin/getmenu/getmenu.component';
 import { DeletemenuComponent } from './admin/deletemenu/deletemenu.component';
 import { EditmenuComponent } from './admin/editmenu/editmenu.component';
+import { AddthemeComponent } from './addtheme/addtheme.component';
+import { DeletethemeComponent } from './deletetheme/deletetheme.component';
+import { ViewthemeComponent } from './viewtheme/viewtheme.component';
+import { EdithemeComponent } from './editheme/editheme.component';
+
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +23,13 @@ import { EditmenuComponent } from './admin/editmenu/editmenu.component';
     GetmenuComponent,
     AddmenuComponent,
     DeletemenuComponent,
-    EditmenuComponent
+    EditmenuComponent,
+    AddthemeComponent,
+    DeletethemeComponent,
+    ViewthemeComponent,
+    EdithemeComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
