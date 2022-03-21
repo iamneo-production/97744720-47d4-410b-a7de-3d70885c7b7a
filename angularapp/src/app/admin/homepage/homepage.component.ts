@@ -18,8 +18,6 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.status=this.share.getStatus();
-    console.log("called");
-    console.log(this.status[1]);
   }
 
 }

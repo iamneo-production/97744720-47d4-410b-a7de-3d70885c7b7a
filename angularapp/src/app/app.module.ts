@@ -13,7 +13,6 @@ import { AddthemeComponent } from './addtheme/addtheme.component';
 import { DeletethemeComponent } from './deletetheme/deletetheme.component';
 import { ViewthemeComponent } from './viewtheme/viewtheme.component';
 import { EdithemeComponent } from './editheme/editheme.component';
-
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 @NgModule({

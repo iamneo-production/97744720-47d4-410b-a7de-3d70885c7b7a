@@ -10,6 +10,8 @@ import { AddthemeComponent } from './addtheme/addtheme.component';
 import { DeletethemeComponent } from './deletetheme/deletetheme.component';
 import { EdithemeComponent } from './editheme/editheme.component';
 import { ViewthemeComponent } from './viewtheme/viewtheme.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 const routes: Routes = [
   {path:'user/home',component:HomeComponent},
   {path:'admin/homepage',component:HomepageComponent},
@@ -17,11 +19,13 @@ const routes: Routes = [
   {path:'admin/addMenu',component:AddmenuComponent},
   {path:'admin/editMenu/:foodMenuID',component:EditmenuComponent},
   {path:'admin/deleteMenu/:foodMenuID',component:DeletemenuComponent},
-  { path: '', redirectTo: '/admin/homepage' ,pathMatch:'full'},
   {path: 'admin/addtheme',component:AddthemeComponent},
   {path: 'admin/deletetheme/:id',component:DeletethemeComponent},
   {path: 'admin/viewtheme',component:ViewthemeComponent},
-  {path:'admin/edittheme/:id',component:EdithemeComponent}
+  {path:'admin/edittheme/:id',component:EdithemeComponent},
+  {path:'login',component:LoginComponent},
+  {path:'signup',component:SignupComponent},
+  { path: '', redirectTo: '/login' ,pathMatch:'full'}
 ];
 
 @NgModule({
@@ -29,4 +33,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
