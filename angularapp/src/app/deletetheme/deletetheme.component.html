@@ -1,0 +1,17 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form action="" class="form">
+      <h3>Deleting Theme</h3>
+      <fieldset>
+        <input type="text" name="name" placeholder="Type your Id" required  [(ngModel)]="theme.themeId" />
+      </fieldset>
+     <fieldset>
+         <br>
+      <button (click) = "deleteTheme(theme.themeId)" class = "btn btn-info" id="delete"> Delete</button>
+      </fieldset>
+    </form>
+    </body>

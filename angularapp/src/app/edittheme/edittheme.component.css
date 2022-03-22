@@ -1,0 +1,13 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background: linear-gradient(135deg, #1246648c, #1246648c);
+  }
+#list {
+    background-color: #EFF0F0;
+}
+#List #list-title {
+    background-color: #2E3747 !important;
+    }

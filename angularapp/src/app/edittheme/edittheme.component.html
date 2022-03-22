@@ -1,0 +1,47 @@
+<div class="col-md-6 offset-md-3">
+    <h3> Update Employee </h3>
+    <form (ngSubmit) = "onSubmit()">
+    
+        <div class="form-group">
+            <label> themeName</label>
+            <input type="text" class ="form-control" id = "themeName"
+                [(ngModel)] = "theme.themeName" name = "themeName">
+        </div>
+    
+        <div class="form-group">
+            <label>themeImageURL </label>
+            <input type="text" class ="form-control" id = "themeImageURL"
+                [(ngModel)] = "theme.themeImageURL" name = "themeImageURL">
+        </div>
+    
+        <div class="form-group">
+            <label>themeDescription</label>
+            <input type="text" class ="form-control" id = "themeDescription"
+                [(ngModel)] = "theme.themeDescription" name = "themeDescription">
+        </div>
+
+        <div class="form-group">
+            <label>themePhotographer</label>
+            <input type="text" class ="form-control" id = "themePhotographer"
+                [(ngModel)] = "theme.themePhotographer" name = "themePhotographer">
+        </div>
+        <div class="form-group">
+            <label>themeVideographer</label>
+            <input type="text" class ="form-control" id = "themeVideographer"
+                [(ngModel)] = "theme.themeVideographer" name = "themeVideographer">
+        </div>
+        <div class="form-group">
+            <label>themeReturnGift</label>
+            <input type="text" class ="form-control" id = "themeReturnGift"
+                [(ngModel)] = "theme.themeReturnGift" name = "themeReturnGift">
+        </div>
+        <div class="form-group">
+            <label>themeCost</label>
+            <input type="text" class ="form-control" id = "themeCost"
+                [(ngModel)] = "theme.themeCost" name = "themeCost">
+        </div>
+    
+        <button class = "btn btn-success" type ="submit">Submit</button>
+    
+    </form>
+    </div> 
