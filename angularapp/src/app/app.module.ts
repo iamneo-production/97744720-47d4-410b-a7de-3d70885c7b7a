@@ -17,7 +17,7 @@ import { EdithemeComponent } from './editheme/editheme.component';
     AddthemeComponent,
     DeletethemeComponent,
     ViewthemeComponent,
-    EdithemeComponent,
+    EdithemeComponent
   ],
   imports: [
     BrowserModule,
