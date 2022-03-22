@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Theme } from '../theme';
-import { ThemeService } from '../theme.service';
+import { Theme } from '../../theme';
+import { ThemeService } from '../../theme.service';
 
 @Component({
   selector: 'app-editheme',
@@ -27,6 +27,7 @@ export class EdithemeComponent implements OnInit {
   onSubmit(){
     this.themeService.updateTheme(this.id, this.theme).subscribe( data =>{
       this.goToThemeList();
+      alert("Theme updated Successfully");
       (error:any) => console.log(error)});
   }
 
