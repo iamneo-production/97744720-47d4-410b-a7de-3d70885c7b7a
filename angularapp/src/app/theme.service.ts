@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ThemeService {
 
   constructor(private httpClient: HttpClient) { }
-  private baseURL = "https://8080-baefceccffdfbdbeccabcebdcdedfbabbaad.examlyiopb.examly.io/admin/theme";
+  private baseURL = "https://8080-dfcaaeacadedcedbeccabcebdcdedfbabbaad.examlyiopb.examly.io/admin/theme";
   
   createTheme(theme:Theme):Observable<Object>{
     return this.httpClient.post(`${this.baseURL}`,theme);
