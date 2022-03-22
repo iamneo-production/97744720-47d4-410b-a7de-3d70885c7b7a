@@ -6,10 +6,10 @@ import { DeletemenuComponent } from './admin/deletemenu/deletemenu.component';
 import { GetmenuComponent } from './admin/getmenu/getmenu.component';
 import { EditmenuComponent } from './admin/editmenu/editmenu.component';
 import { NgModule } from '@angular/core';
-import { AddthemeComponent } from './addtheme/addtheme.component';
-import { DeletethemeComponent } from './deletetheme/deletetheme.component';
-import { EdithemeComponent } from './editheme/editheme.component';
-import { ViewthemeComponent } from './viewtheme/viewtheme.component';
+import { AddthemeComponent } from './admin/addtheme/addtheme.component';
+import { DeletethemeComponent } from './admin/deletetheme/deletetheme.component';
+import { EdithemeComponent } from './admin/editheme/editheme.component';
+import { ViewthemeComponent } from './admin/viewtheme/viewtheme.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 const routes: Routes = [

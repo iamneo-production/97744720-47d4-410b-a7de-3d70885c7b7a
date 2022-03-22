@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SharedMenuAndItemService } from '../shared.service';
-import { Theme } from '../theme';
-import { ThemeService } from '../theme.service';
+import { SharedMenuAndItemService } from '../../shared.service';
+import { Theme } from '../../theme';
+import { ThemeService } from '../../theme.service';
 
 @Component({
   selector: 'app-viewtheme',
