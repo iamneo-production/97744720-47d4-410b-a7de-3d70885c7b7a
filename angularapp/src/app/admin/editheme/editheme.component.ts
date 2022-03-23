@@ -22,7 +22,16 @@ export class EdithemeComponent implements OnInit {
       this.theme = data;
      (error:any) => console.log(error)});
   }
-  
+  keyPressNumbers(event:any) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+    // Only Numbers 0-9
+    if ((charCode < 48 || charCode > 57)) {
+      event.preventDefault();
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   onSubmit(){
     this.themeService.updateTheme(this.id, this.theme).subscribe( data =>{
