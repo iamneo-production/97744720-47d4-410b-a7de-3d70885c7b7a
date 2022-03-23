@@ -10,17 +10,24 @@ import { ConfirmValidation } from './confirm-validation';
 })
 export class SignupComponent {
   signupForm: FormGroup =new FormGroup({
+    selectCategory:new FormControl(''),
     email:new FormControl(''),
     userName:new FormControl(''),
     mobileNumber:new FormControl(''),
     password:new FormControl(''),
-    Confirmpassword:new FormControl('')
+    confirmPassword:new FormControl(''),
+    
   })
     title = 'validation';
     constructor(private formBuilder: FormBuilder) {}
     submitted = false;
     ngOnInit(): void {
       this.signupForm = this.formBuilder.group({
+        selectCategory:
+      [
+        '',
+        [Validators.required]
+      ],
         email: [
           '', 
           [Validators.required, 
@@ -46,7 +53,7 @@ export class SignupComponent {
             Validators.maxLength(40)
           ]
         ],
-        Confirmpassword: [
+        confirmPassword: [
           '',
           [
             Validators.required,
@@ -54,8 +61,9 @@ export class SignupComponent {
         ]
       },
       {
-        validators:[ConfirmValidation. match('password', 'Confirmpassword')]
+        validators:[ConfirmValidation. match('password', 'confirmPassword')]
       }
+       
       )
     }
       
