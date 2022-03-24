@@ -1,0 +1,103 @@
+<app-homepage></app-homepage>
+<body>
+    <div class="content">
+      <img class="img-up" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI9Mr7MBsUriP7qfRHWRiUmeC5GLFjNBQVCn0QIUYqvn-54s4rZHFfbDi82yY5KQoU4qo&usqp=CAU">
+      <form (ngSubmit)="onSubmit()" #addTheme="ngForm">
+        <table>
+
+        <div class="ThemeName">
+          <tr>
+          <div class="row" [class.has-error]="fullNameControl.invalid && fullNameControl.touched">
+            <label for="themeName" class="control-label"></label>
+            <input type="text" name="themeName" required
+            placeholder="Enter Theme Name" id="themeName"[(ngModel)]="theme.themeName" #fullNameControl="ngModel">
+            <span class="help-block"
+            *ngIf="fullNameControl.invalid && fullNameControl.touched">
+            Theme Name is required:
+          </span> 
+          </div>
+          <br>
+        
+      
+
+          <div class="row" [class.has-error]="fullVideogrpControl.invalid && fullVideogrpControl.touched">
+            <input type="text" placeholder="Enter videographer Details"  id="themeVideographer"  name="themeVideographer" required
+            [(ngModel)]="theme.themeVideographer"  #fullVideogrpControl="ngModel">
+            <span class="help-block"
+            *ngIf="fullVideogrpControl.invalid && fullVideogrpControl.touched">
+            Theme Videographer details is required:
+          </span>
+          </div>
+          <br>
+
+
+          <div class="row" [class.has-error]="fullImageUrlControl.invalid && fullImageUrlControl.touched">
+            <input type="text" placeholder="Enter the Image Url"  required id="themeImageURL" name="themeImageURL" required
+            [(ngModel)]="theme.themeImageURL"  #fullImageUrlControl="ngModel">
+            <span class="help-block"
+            *ngIf="fullImageUrlControl.invalid && fullImageUrlControl.touched">
+            Theme Image URL is required:
+          </span> 
+          </div>
+          <br>
+       
+          <div class="row" [class.has-error]="fullReturnGiftControl.invalid && fullReturnGiftControl.touched">
+            <input type="text" placeholder="Enter Theme return gift" id="themeReturnGift" name="themeReturnGift" required
+            [(ngModel)]="theme.themeReturnGift"  #fullReturnGiftControl="ngModel">
+            <span class="help-block"
+            *ngIf="fullReturnGiftControl.invalid && fullReturnGiftControl.touched">
+            Theme Return Gift details is required:
+          </span> 
+        </div>
+        <br>
+      </tr>
+      
+
+      <tr>
+
+        <div class="row" [class.has-error]="fullPhotogrprControl.invalid && fullPhotogrprControl.touched">
+            <input type="text" placeholder="Enter Photographer Details" id="themePhotographer" name="themePhotographer" required
+            [(ngModel)]="theme.themePhotographer"  #fullPhotogrprControl="ngModel">
+            <span class="help-block"
+            *ngIf="fullPhotogrprControl.invalid && fullPhotogrprControl.touched">
+            Theme Photographer details is required:
+          </span> 
+          </div>
+          <br>
+
+        <div class="row" [class.has-error]="fullCostControl.invalid && fullCostControl.touched">
+            <input type="text" placeholder="Enter Theme cost" id="themeCost" name="themeCost" required
+            [(ngModel)]="theme.themeCost"  #fullCostControl="ngModel" (keypress)="keyPressNumbers($event)" >
+            <span class="help-block"
+            *ngIf="fullCostControl.invalid && fullCostControl.touched">
+            Theme Cost details is required:
+          </span> 
+          </div>
+          <br>
+
+          <div class="row" [class.has-error]="fullDescriptionControl.invalid && fullDescriptionControl.touched">
+            <input type="text" placeholder="Enter Theme description" id="themeDescription" name="themeDescription" required
+             [(ngModel)]="theme.themeDescription"  #fullDescriptionControl="ngModel">
+             <span class="help-block"
+             *ngIf="fullDescriptionControl.invalid && fullDescriptionControl.touched">
+             Theme Description details is required:
+           </span> 
+
+          </div>
+          <br>
+         
+          
+        
+        
+         <button mat-stroked-button color="primary" class="btn btn-success" id="addTheme" [disabled]="!theme.themeName || !theme.themeVideographer || !theme.themeImageURL 
+         || !theme.themeReturnGift || !theme.themePhotographer || !theme.themeCost || !theme.themeDescription " type="submit">Add theme</button>
+        </tr>
+      </div>
+      </table>
+      <img class="img-down" src="https://image.shutterstock.com/image-illustration/gift-yellow-boxes-blue-ribbon-260nw-1925903828.jpg">
+        
+    </form>
+  </div>
+
+
+</body>

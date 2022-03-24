@@ -1,0 +1,39 @@
+#XYZ {
+  text-decoration: none;
+  margin-right: 40px;
+  color: #ffffff;
+  font-size: 25px;
+  position: relative;
+  left: 10px;
+  bottom: 5px;
+}
+.foodmenu,.addons,.theme
+{
+  text-decoration: none;
+  margin-right: 30px;
+  color: #ffffff;
+  font-size: 18px;
+  font-size:large;
+}
+.foodmenu:hover,.addons:hover,.theme:hover
+{
+  font-size: 30px;
+}
+.foodmenu1,.addons1,.theme1
+{
+  font-size:30px;
+}
+#logout {
+  text-decoration: none;
+  color: #ffffff;
+  position: absolute;
+  right: 40px;
+  font-size: 18px;
+  font-size:large;
+}
+#abc {
+  background-color: #0068c9;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}

@@ -10,8 +10,6 @@ import { User } from '../user';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
- 
   loginForm: FormGroup =new FormGroup({
     email:new FormControl(''),
     password:new FormControl(''),
@@ -64,12 +62,10 @@ export class LoginComponent implements OnInit {
     }
 
     )
-
     this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
     console.log(JSON.stringify(this.loginForm.value, null, 2));
 }
-
 }

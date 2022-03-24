@@ -1,0 +1,43 @@
+<app-homepage></app-homepage>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-sm border" id="list">
+        <br>
+        <div id="adminFoodMenu" class="container">
+            <button mat-stroked-button color="primary" class="btn btn-success" routerLink="/admin/addtheme" routerLinkActive="active" id="addThemeButton">Add Theme</button>
+          </div>
+          <br>
+    <h2> Theme List</h2>
+    <table class = "table table-bordered">
+        <thead>
+            <tr>
+                <th id="list-title">Theme Id</th>
+                <th id="list-title"> Name</th>
+                <th id="list-title"> Videographer Details</th>
+                <th id="list-title"> Image URL</th>
+                <th id="list-title"> Theme Return Gift</th>
+                <th id="list-title"> Photographer Details</th>
+                <th id="list-title"> Theme Cost</th>
+                <th id="list-title"> Theme Description</th>
+                <th colspan="2" id="list-title">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let theme of themes" >
+               <td id="list-title">{{theme.themeId}}</td>
+                <td id="list-title"> {{ theme.themeName }} </td>
+                <td id="list-title"> {{ theme.themeVideographer }} </td>
+                <td id="list-title"><img src="{{theme.themeImageURL}}" alt="Image not found" height="70" width="150"/></td>
+                <td id="list-title"> {{ theme.themeReturnGift }} </td>
+                <td id="list-title"> {{ theme.themePhotographer }} </td>
+                <td id="list-title"> {{ theme.themeCost }} </td>
+                <td id="list-title"> {{ theme.themeDescription }}</td>
+                
+                <td><button type="button" (click) = "updateTheme(theme.themeId)" class = "btn btn-primary"><i class="fa fa-pencil"></i></button></td>
+                <td><button type="button" (click) = "deleteTheme(theme.themeId)" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
