@@ -5,7 +5,7 @@ import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 import { DeletemenuComponent } from './admin/deletemenu/deletemenu.component';
 import { GetmenuComponent } from './admin/getmenu/getmenu.component';
 import { EditmenuComponent } from './admin/editmenu/editmenu.component';
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { AddthemeComponent } from './admin/addtheme/addtheme.component';
 import { DeletethemeComponent } from './admin/deletetheme/deletetheme.component';
 import { EdithemeComponent } from './admin/editheme/editheme.component';

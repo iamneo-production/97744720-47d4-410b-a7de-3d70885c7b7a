@@ -2,10 +2,10 @@ p {
     font-family: Lato;
   }
   #Signup {
-    width: 90vh;
+    width: 40%;
     border: 3px solid black;
     margin: 30px;
-    height: 90vh;
+    height: 550px;
     margin-left: auto;
     margin-right: auto;
   }

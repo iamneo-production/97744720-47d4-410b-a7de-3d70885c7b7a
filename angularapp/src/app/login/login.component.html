@@ -1,16 +1,17 @@
 <div id="Login">
     <h1>Login</h1>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" action="/" (ngSubmit)="onSubmit()">
         <div class="form-group">
             <input 
               type="email" 
               id="email" 
               placeholder="Enter email" 
               formControlName="email"
-              [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+              [(ngModel)]="user.email"
+              [ngClass]="{ 'is-invalid': (submitted && f['email'].errors)||(f['email'].touched && f['email'].errors)  }"
             >
             <div 
-              *ngIf="submitted && f['email'].errors" 
+              *ngIf="(submitted && f['email'].errors)||(f['email'].touched && f['email'].errors)" 
               class="invalid-feedback">
                 <div *ngIf="f['email'].errors['required']">
                   Email is required
@@ -26,10 +27,11 @@
               id="password" 
               placeholder="Enter Password" 
               formControlName="password"
-              [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+              [(ngModel)]="user.password"
+              [ngClass]="{ 'is-invalid': (submitted && f['password'].errors)||(f['password'].touched && f['password'].errors)}"
             >
             <div 
-              *ngIf="submitted && f['password'].errors" 
+              *ngIf="(submitted && f['password'].errors)||(f['password'].touched && f['password'].errors)" 
               class="invalid-feedback">
                 <div *ngIf="f['password'].errors['required']">
                   Password is required
@@ -43,15 +45,19 @@
             </div>
         </div><br>
         <div class="form-group">
-            <button routerLink="/admin/homepage" routerLinkActive="active" id="loginButton">
+            <a href="#"
+            >
+            <button [disabled]="loginForm.invalid"  id="loginButton">
               Login
-            </button>
+            </button></a>
         </div><br/>
         <div>
             <label>
               New User/admin?
             </label>
-            <a href="" routerLink="/signup" routerLinkActive="active" 
+            <a href="#"
+              routerLink="/signup" 
+              routerLinkActive="active" 
               id="signupLink">
               Signup
            </a>
@@ -59,4 +65,3 @@
   
     </form>
   </div>
-  
