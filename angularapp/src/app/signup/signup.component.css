@@ -1,0 +1,61 @@
+p {
+    font-family: Lato;
+  }
+  #Signup {
+    width: 40%;
+    border: 3px solid black;
+    margin: 30px;
+    height: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  Button {
+    color: white;
+    font-size: large;
+    width: 15vh;
+    height: 5.5vh;
+    padding-top: 0.2vh;
+    margin-left: 1vh;
+    margin-right: 0.4vh;
+    background: linear-gradient(
+      -90deg,
+      rgba(60, 115, 147, 255),
+      rgba(0, 71, 113, 255)
+    );
+  }
+  h1 {
+    background-color: rgba(68, 0, 1, 255);
+    color: white;
+    border: 3px solid black;
+    border-spacing: 5vh;
+    padding-left: 15vh;
+    padding-right: 20vh;
+    margin: 5vh;
+  }
+  div {
+    background-color: rgba(212, 192, 201, 255);
+    padding-left: 4vw;
+    padding-right: 4vw;
+    text-align: center;
+  }
+  input {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    background: linear-gradient(-150deg, rgba(212, 192, 201, 255), white);
+  }
+  option {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+  }
+  select {
+    border: 2px solid black;
+    width: 210px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    background: linear-gradient(-150deg, rgba(212, 192, 201, 255), white);
+  }
+ 
+  .invalid-feedback{
+    color: red;
+    }

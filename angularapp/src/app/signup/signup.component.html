@@ -1,0 +1,143 @@
+<div id="Signup" >
+    <h1>REGISTER</h1>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+       
+      <div class="form-group">
+          <select id="selectCategory" [(ngModel)]="user.selectCategory" formControlName="selectCategory"required
+         
+              [ngClass]="{ 'is-invalid': (submitted && f['selectCategory'].errors)||(f['selectCategory'].touched && f['selectCategory'].errors) }" >
+              <option value="" id="admin/user" disabled selected hidden>
+                Enter admin/user
+              </option>
+              <option>User</option>
+              <option>Admin</option>
+          </select>
+              <div  *ngIf="(submitted && f['selectCategory'].errors)||(f['selectCategory'].touched && f['selectCategory'].errors)"
+                     class="invalid-feedback">
+                <div *ngIf="f['selectCategory'].errors['required']">
+                  Category is required
+                </div>
+              </div>
+              </div><br>
+          
+        <div class="form-group">
+          <input 
+            type="email" 
+            placeholder="Enter email" 
+            formControlName="email" 
+            id="email"
+            [(ngModel)]="user.email"
+            [ngClass]="{ 'is-invalid': (submitted && f['email'].errors)||(f['email'].touched && f['email'].errors)  }"
+          >
+          <div 
+            *ngIf="(submitted && f['email'].errors)||(f['email'].touched && f['email'].errors) " 
+            class="invalid-feedback">
+             <div *ngIf="f['email'].errors['required']">
+               Email is required
+             </div>
+             <div *ngIf="f['email'].errors['email']">
+               Email is invalid
+             </div>
+          </div>
+        </div><br>
+    
+        <div class="form-group">
+            <input
+              placeholder="Enter Username" 
+              id="username"
+              type="text"
+              formControlName="userName"
+              [(ngModel)]="user.userName"
+              [ngClass]="{ 'is-invalid': (submitted && f['userName'].errors)||(f['userName'].touched && f['userName'].errors)  }"
+            />
+            <div
+              *ngIf="(submitted && f['userName'].errors)||(f['userName'].touched && f['userName'].errors) "
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['userName'].errors['required']" >
+                User Name is required
+              </div>
+            </div>
+        </div><br>
+    
+        <div class="form-group">
+            <input
+              type="number"  
+              placeholder="Enter Mobilenumber"
+              id="mobileNumber"
+              formControlName="mobileNumber"
+              [(ngModel)]="user.mobileNumber"
+              value=""
+              [ngClass]="{ 'is-invalid': (submitted && f['mobileNumber'].errors)||(f['mobileNumber'].touched && f['mobileNumber'].errors)  }"
+            />
+            <div 
+              *ngIf=" (submitted && f['mobileNumber'].errors)||(f['mobileNumber'].touched && f['mobileNumber'].errors) "
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['mobileNumber'].errors['required']">
+                Mobile number is required
+              </div>
+              <div *ngIf="f['mobileNumber'].errors['pattern']">
+                Mobile number is not 10 digit
+              </div>
+            </div>
+          </div><br>
+        <div class="form-group">
+            <input 
+              type="password" 
+              placeholder="Enter Password" 
+              formControlName="password" 
+              id="password"
+              [(ngModel)]="user.password"
+              [ngClass]="{ 'is-invalid':  (submitted && f['password'].errors)||(f['password'].touched && f['password'].errors)  }"
+           />
+          <div 
+            *ngIf="(submitted && f['password'].errors)||(f['password'].touched && f['password'].errors)" 
+            class="invalid-feedback"
+          >
+            <div *ngIf="f['password'].errors['required']">
+              Password is required
+            </div>
+            <div *ngIf="f['password'].errors['minlength']">
+              Password must be at least 6 characters
+            </div>
+            <div *ngIf="f['password'].errors['maxlength']">
+              Password must not exceed 40 characters
+            </div>
+          </div>
+        </div><br>
+    
+        <div class="form-group">
+            <input type="password" 
+              id="confirmPassword" 
+              placeholder="Enter Confirm Password" 
+              formControlName="confirmPassword" 
+              (ngModel)="user.password"
+              [ngClass]="{ 'is-invalid': (submitted && f['confirmPassword'].errors)||(f['confirmPassword'].touched && f['confirmPassword'].errors)}"
+            />
+            <div 
+              *ngIf="(submitted && f['confirmPassword'].errors)||(f['confirmPassword'].touched && f['confirmPassword'].errors)" 
+              class="invalid-feedback">
+              <div *ngIf="f['confirmPassword'].errors['required']">
+                Password is required
+              </div>
+              <div *ngIf="f['confirmPassword'].errors['matching']">
+                Password doesnot match
+              </div>
+            </div>
+        </div><br>
+            <div class="form-group">
+              <a >
+                <button [disabled]="signupForm.invalid" id="submitButton">Submit</button></a>
+            </div><br />
+            <div>
+                Already a user?
+              <a href="#" 
+                 routerLink="/login" 
+                 routerLinkActive="active" 
+                 id="signinLink">
+                 Login
+              </a>
+            </div>
+      </form>
+    </div>
