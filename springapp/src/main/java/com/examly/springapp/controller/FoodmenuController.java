@@ -39,7 +39,7 @@ public class FoodmenuController {
 	}
 	
 	@RequestMapping(value = "/deleteMenu/{id}", method = RequestMethod.DELETE)
-	public void deleteLocation(@PathVariable Integer id) {
+	public void deleteMenu(@PathVariable Integer id) {
 		foodmenuservice.deleteMenu(id);
 	 }
 	
