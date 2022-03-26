@@ -11,12 +11,12 @@ import { SharedMenuAndItemService } from 'src/app/shared.service';
 })
 export class AddmenuComponent implements OnInit {
   itemdetails:any=null;
+  status:any=null;
   pattern:any;
   pattern1:any;
   itmcat=this.share.getItmcat();
   changeitemcategory(e:any)
   {
-    console.log(e.target.value);
     this.additemform.get('foodMenuType').setValue(e.target.value,
       {
         onlySelf:true,
@@ -43,7 +43,14 @@ export class AddmenuComponent implements OnInit {
  {
       if(this.additemform.valid)
       {
-       this.addItem(x);
+      if(this.share.checkstatus(this.additemform.value,this.itemdetails))
+      {
+       alert("The Item is already exist");
+      }
+      else
+      {
+        this.addItem(x);
+      }
       }
       else
       {

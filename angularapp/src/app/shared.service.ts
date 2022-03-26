@@ -8,6 +8,20 @@ export class SharedMenuAndItemService {
   obj:any=Object;
   itemdetails:any=null;
   status: Array<number> = [0,0,0]; 
+  checkstatus(additemform:any,itemdetails:any)
+  {
+    for (let i = 0; i < itemdetails.length; i++) 
+       {
+         if(additemform.foodMenuItems==itemdetails[i].foodMenuItems && additemform.foodMenuType==itemdetails[i].foodMenuType && additemform.foodMenuCost==itemdetails[i].foodMenuCost && additemform.foodMenuID!=itemdetails[i].foodMenuID)
+          return true
+      }
+    return false
+  }
+  chechstatus1(x:any)
+  {
+    console.log(x[1]);
+    console.log(x.length);
+  }
   getStatus()
   {
     return this.status;

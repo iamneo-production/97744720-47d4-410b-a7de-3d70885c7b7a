@@ -38,18 +38,24 @@ export class EditmenuComponent implements OnInit {
   }
   updateItem()
   {
-    this.addmenuservice.updateItem(this.itemtoupdate).subscribe(
-      (resp)=>
-      {
-        console.log(resp);
-        alert("Your Item Updated Successfully");
-        window.location.reload();
-      },
-      (err)=>
-      {
-        console.log(err);
-      }
-    );
+    if(this.share.checkstatus(this.itemtoupdate,this.share.getItem()))
+    {
+      alert("The Item is already Exist");
+    }
+    else{
+      this.addmenuservice.updateItem(this.itemtoupdate).subscribe(
+        (resp)=>
+        {
+          console.log(resp);
+          alert("Your Item Updated Successfully");
+          window.location.reload();
+        },
+        (err)=>
+        {
+          console.log(err);
+        }
+      );
+    }
   }
   itemtoupdate=
   {
