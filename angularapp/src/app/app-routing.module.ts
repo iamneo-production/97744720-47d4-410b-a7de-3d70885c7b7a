@@ -12,6 +12,10 @@ import { EdithemeComponent } from './admin/editheme/editheme.component';
 import { ViewthemeComponent } from './admin/viewtheme/viewtheme.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AddaddonComponent } from './admin/addaddon/addaddon.component';
+import { DeleteaddonComponent } from './admin/deleteaddon/deleteaddon.component';
+import { EditaddonComponent } from './admin/editaddon/editaddon.component';
+import { ViewaddonComponent } from './admin/viewaddon/viewaddon.component';
 const routes: Routes = [
   {path:'user/home',component:HomeComponent},
   {path:'admin/homepage',component:HomepageComponent},
@@ -23,6 +27,10 @@ const routes: Routes = [
   {path: 'admin/deletetheme/:id',component:DeletethemeComponent},
   {path: 'admin/viewtheme',component:ViewthemeComponent},
   {path:'admin/edittheme/:id',component:EdithemeComponent},
+  {path:'admin/addaddon',component:AddaddonComponent},
+  {path:'admin/deleteaddon/:id',component:DeleteaddonComponent},
+  {path:'admin/editaddon/:id',component:EditaddonComponent},
+  {path:'admin/viewaddon',component:ViewaddonComponent},
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   { path: '', redirectTo: '/login' ,pathMatch:'full'}

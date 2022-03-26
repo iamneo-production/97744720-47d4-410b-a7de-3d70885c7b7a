@@ -5,9 +5,10 @@ p {
     width: 40%;
     border: 3px solid black;
     margin: 30px;
+
+    height: 1000px;
     height: 750px;
-    margin-left: auto;
-    margin-right: auto;
+   
   }
   Button {
     color: white;

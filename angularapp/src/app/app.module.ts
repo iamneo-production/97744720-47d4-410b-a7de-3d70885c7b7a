@@ -15,6 +15,11 @@ import { ViewthemeComponent } from './admin/viewtheme/viewtheme.component';
 import { EdithemeComponent } from './admin/editheme/editheme.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { AddaddonComponent } from './admin/addaddon/addaddon.component';
+import { DeleteaddonComponent } from './admin/deleteaddon/deleteaddon.component';
+import { EditaddonComponent } from './admin/editaddon/editaddon.component';
+import { ViewaddonComponent } from './admin/viewaddon/viewaddon.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +33,11 @@ import { SignupComponent } from './signup/signup.component';
     ViewthemeComponent,
     EdithemeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AddaddonComponent,
+    DeleteaddonComponent,
+    EditaddonComponent,
+    ViewaddonComponent
   ],
   imports: [
     BrowserModule,
