@@ -54,8 +54,12 @@ export class LoginComponent implements OnInit {
     this.service.login(this.user).subscribe(
       data=>{
         console.log("Success");
-       
-       
+        if(data["selectCategory"]=="User"){
+          this.router.navigate(['/user/home']);
+        }
+        else{
+          this.router.navigate(['/admin/homepage']);
+        }  
     },
     error=>{
       alert("Invalid Email and Password")
