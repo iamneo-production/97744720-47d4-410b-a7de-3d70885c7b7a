@@ -15,6 +15,10 @@ export class HomepageComponent implements OnInit {
     this.itemdetails=this.share.getItem();
   }
   constructor(private share:SharedMenuAndItemService) { }
+  settingstatus()
+  {
+    this.share.setStatus([0,0,0]);
+  }
 
   ngOnInit(): void {
     this.status=this.share.getStatus();
