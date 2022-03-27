@@ -35,8 +35,15 @@ export class AddthemeComponent implements OnInit {
   goToThemeList(){
     this.router.navigate(['/admin/viewtheme']);
   }
+  checkstatus(additemform: any, any: any, any: any, any: any, itemdetails: any, any: any, any: any, any: any) {
+    throw new Error('Function not implemented.');
+  }
   onSubmit(){
+    checkstatus(additemform:any,itemdetails:any)
     console.log(this.theme);
     this.saveTheme();
   }
 }
+
+
+
