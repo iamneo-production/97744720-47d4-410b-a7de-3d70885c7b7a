@@ -44,8 +44,9 @@ export class DeleteaddonComponent implements OnInit {
        data=>{
         alert("Deleted Successfully");
          this.router.navigate(['/admin/viewaddon']);
-        
-         (error:any)=>console.log(error)})
+       },
+         (error:any)=>
+         {console.log(error)});
        }
 
        goToViewAddon(){

@@ -2,7 +2,7 @@
     <a href="" id="XYZ">Business Meet Event</a>
     <a href="" routerLink="/admin/viewtheme" routerLinkActive="active"  class="theme" [ngClass]="status[0]==1?'theme1':'theme'" id="adminTheme">Add Theme</a>
     <a href="" class="foodmenu" [ngClass]="status[1]==1?'foodmenu1':'foodmenu'" routerLink="/admin/getMenu" routerLinkActive="active" id="adminFoodMenu" (click)="getitems()">Food Menu</a>
-    <a href="" class="addons" [ngClass]="status[2]==1?'addons1':'addons'" id="adminAddOns">Add Add-ons</a>
-    <a href="" routerLink="/login" routerLinkActive="active" id="logout">Logout</a>
+    <a href="" routerLink="/admin/viewaddon" routerLinkActive="active" class="addons" [ngClass]="status[2]==1?'addons1':'addons'" id="adminAddOns">Add Add-ons</a>
+    <a href="" routerLink="/login" (click)="settingstatus()" routerLinkActive="active" id="logout">Logout</a>
   </div>
   

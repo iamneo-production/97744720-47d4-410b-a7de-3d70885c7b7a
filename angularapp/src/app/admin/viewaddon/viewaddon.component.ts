@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Addon } from 'src/app/addon';
 import { AddonService } from 'src/app/addon.service';
+import { SharedMenuAndItemService } from 'src/app/shared.service';
 
 @Component({
   selector: 'app-viewaddon',
@@ -12,14 +13,13 @@ export class ViewaddonComponent implements OnInit {
 
   addondetails!:Addon[];
 
-  constructor(private router:Router,private addonservice:AddonService) { 
+  constructor(private router:Router,private addonservice:AddonService,private share: SharedMenuAndItemService) { 
    
 }
 addon=new Addon();
   ngOnInit(): void {
     this.viewAddon();
-   
-    
+    this.share.setStatus([0,0,1]);
   }
   viewAddon(){
     this.addonservice.getAddon().subscribe(
