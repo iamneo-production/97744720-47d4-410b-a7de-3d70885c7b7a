@@ -60,5 +60,11 @@ export class GetmenuComponent implements OnInit {
     this.getitemDetails();
     this.share.setStatus([0,1,0]);
   }
-
+  key:string='foodMenuItems';
+  rev:boolean=false;
+  sort(key)
+  {
+    this.key=key;
+    this.rev=!this.rev;
+  }
 }
