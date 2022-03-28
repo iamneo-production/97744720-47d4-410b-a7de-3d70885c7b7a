@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody class="tbody">
-        <tr *ngFor="let item of itemdetails">
+        <tr *ngFor="let item of itemdetails | paginate: {itemsPerPage:2,currentPage:p};">
           <td class="w-20"><img src={{item.foodMenuImage}} alt="Image not found" width="150" height="70" /></td>
           <td>{{item.foodMenuItems}}</td>
           <td>{{item.foodMenuType}}</td>
@@ -22,6 +22,7 @@
           <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" (click)="setitmname(item)"><i class="fa fa-trash"></i></button></td>
         </tr>
       </tbody>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </table>
   </div>
 </div>

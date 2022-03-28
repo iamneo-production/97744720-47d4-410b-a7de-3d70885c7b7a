@@ -13,6 +13,7 @@ export class GetmenuComponent implements OnInit {
 
   itemdetails: any = null;
   itm:any=null;
+  p:number=1;
   setitmname(item:any)
   {
     this.itm=item.foodMenuItems;
