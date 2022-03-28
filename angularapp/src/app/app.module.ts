@@ -19,7 +19,8 @@ import { AddaddonComponent } from './admin/addaddon/addaddon.component';
 import { DeleteaddonComponent } from './admin/deleteaddon/deleteaddon.component';
 import { EditaddonComponent } from './admin/editaddon/editaddon.component';
 import { ViewaddonComponent } from './admin/viewaddon/viewaddon.component';
-
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,9 @@ import { ViewaddonComponent } from './admin/viewaddon/viewaddon.component';
     AppRoutingModule,
     FormsModule, 
     ReactiveFormsModule, 
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    Ng2OrderModule
   ],
   exports:
   [

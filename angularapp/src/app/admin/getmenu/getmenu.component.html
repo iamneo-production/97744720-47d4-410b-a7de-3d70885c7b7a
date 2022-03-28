@@ -6,14 +6,14 @@
       <thead class="thead">
         <tr>
           <th>Item Image</th>
-          <th>Item name</th>
-          <th>Item category</th>
-          <th>Price</th>
+          <th (click)="sort('foodMenuItems')">Item name</th>
+          <th (click)="sort('foodMenuType')">Item category</th>
+          <th (click)="sort('foodMenuCost')">Price</th>
           <th colspan="2">Action</th>
         </tr>
       </thead>
       <tbody class="tbody">
-        <tr *ngFor="let item of itemdetails">
+        <tr *ngFor="let item of itemdetails | orderBy : key : rev | paginate: {itemsPerPage:2,currentPage:p};">
           <td class="w-20"><img src={{item.foodMenuImage}} alt="Image not found" width="150" height="70" /></td>
           <td>{{item.foodMenuItems}}</td>
           <td>{{item.foodMenuType}}</td>
@@ -23,6 +23,7 @@
         </tr>
       </tbody>
     </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </div>
 </div>
 

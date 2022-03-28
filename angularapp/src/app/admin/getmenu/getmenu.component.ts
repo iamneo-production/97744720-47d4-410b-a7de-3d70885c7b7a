@@ -13,6 +13,7 @@ export class GetmenuComponent implements OnInit {
 
   itemdetails: any = null;
   itm:any=null;
+  p:number=1;
   setitmname(item:any)
   {
     this.itm=item.foodMenuItems;
@@ -59,5 +60,11 @@ export class GetmenuComponent implements OnInit {
     this.getitemDetails();
     this.share.setStatus([0,1,0]);
   }
-
+  key:string='foodMenuItems';
+  rev:boolean=false;
+  sort(key)
+  {
+    this.key=key;
+    this.rev=!this.rev;
+  }
 }
