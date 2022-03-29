@@ -23,6 +23,16 @@ export class AdthemeComponent implements OnInit {
     });
     
   }
+  keyPressNumbers(event:any) {
+    var charCode = (event.which) ? event.which : event.keyCode;
+    // Only Numbers 0-9
+    if ((charCode < 48 || charCode > 57)) {
+      event.preventDefault();
+      return false;
+    } else {
+      return true;
+    }
+  }
   addItem(additemform: any)
   {
   this.addthemeservice.createTheme(this.additemform.value).subscribe(
@@ -44,6 +54,7 @@ export class AdthemeComponent implements OnInit {
         if(this.share.checkstatus(this.additemform.value,this.itemdetails))
       {
        alert("The Item is already exist");
+       window.location.reload();
       }
       else
       {
@@ -59,6 +70,7 @@ export class AdthemeComponent implements OnInit {
   goToThemeList() {
     this.router.navigate(['/admin/viewtheme']);
   }
+  
 
   additemform:any=FormGroup;
   ngOnInit(): void {
@@ -76,5 +88,6 @@ export class AdthemeComponent implements OnInit {
         
       },{updateOn:'change'}
     );
+    
   }
 }

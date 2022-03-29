@@ -1,3 +1,4 @@
+<app-homepage></app-homepage>
 <body>
     <div class="content">
         <img class="img-up" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI9Mr7MBsUriP7qfRHWRiUmeC5GLFjNBQVCn0QIUYqvn-54s4rZHFfbDi82yY5KQoU4qo&usqp=CAU">
@@ -60,7 +61,7 @@
                     <div class="row">
                         <div class="form-group">
                             <label for="themeCost" ></label>
-                            <input formControlName="themeCost" type="text" #themeCost (ngModel)="themeCost" name="themeCost" id="themeCost" class="form-control" placeholder="Enter Cost Name" [class.is-invalid]="additemform.get('themeCost')?.invalid && (additemform.get('themeCost')?.touched || localform.submitted)">
+                            <input formControlName="themeCost" type="text" #themeCost (ngModel)="themeCost" name="themeCost" id="themeCost" class="form-control" placeholder="Enter Cost Name" (keypress)="keyPressNumbers($event)" [class.is-invalid]="additemform.get('themeCost')?.invalid && (additemform.get('themeCost')?.touched || localform.submitted)">
                             <div class="invalid-feedback">
                                 <div *ngIf="additemform.get('themeCost')?.hasError('required')">*Please Enter Theme Cost</div>
                             </div>

@@ -7,7 +7,6 @@ import { DeletemenuComponent } from './admin/deletemenu/deletemenu.component';
 import { GetmenuComponent } from './admin/getmenu/getmenu.component';
 import { EditmenuComponent } from './admin/editmenu/editmenu.component';
 import { Component, NgModule } from '@angular/core';
-import { AddthemeComponent } from './admin/addtheme/addtheme.component';
 import { DeletethemeComponent } from './admin/deletetheme/deletetheme.component';
 import { EdithemeComponent } from './admin/editheme/editheme.component';
 import { ViewthemeComponent } from './admin/viewtheme/viewtheme.component';
@@ -24,7 +23,7 @@ const routes: Routes = [
   {path: 'admin/addtheme',component:AdthemeComponent},
   {path:'admin/editMenu/:foodMenuID',component:EditmenuComponent},
   {path:'admin/deleteMenu/:foodMenuID',component:DeletemenuComponent},
-  {path: 'admin/addtheme',component:AddthemeComponent},
+  {path: 'admin/addtheme',component:AdthemeComponent},
   {path: 'admin/deletetheme/:id',component:DeletethemeComponent},
   {path: 'admin/viewtheme',component:ViewthemeComponent},
   {path:'admin/edittheme/:id',component:EdithemeComponent},
