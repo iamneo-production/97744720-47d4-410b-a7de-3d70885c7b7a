@@ -1,42 +1,80 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ThemeService } from '../../theme.service';
+import { SharedthemeService } from '../../sharedtheme.service';
 import { Theme } from '../../theme';
+import { ThemeService } from '../../theme.service';
 
 @Component({
-  selector: 'app-addtheme',
+  selector: 'app-adtheme',
   templateUrl: './addtheme.component.html',
   styleUrls: ['./addtheme.component.css']
 })
-export class AddthemeComponent implements OnInit {
-  theme: Theme = new Theme();
-  constructor(private router:Router, private themeservice: ThemeService) { }
-
-  ngOnInit(): void {
-  }
-  saveTheme(){
-    this.themeservice.createTheme(this.theme).subscribe(data=>{
-      console.log(data);
-      this.goToThemeList();
-      alert("Your item Added Sucessfully");
-      (error: any)=>console.log(error);
+export class AdthemeComponent implements OnInit {
+  itemdetails:any=null;
+  status:any=null;
+  pattern:any;
+  pattern1:any;
+  themes!: Theme[];
+  constructor(private router:Router,private addthemeservice:ThemeService,private share:SharedthemeService){
+    this.addthemeservice.getThemeList().subscribe(data => {
+      this.itemdetails = data;
+      this.share.setItem(this.itemdetails);
     });
+    
   }
-  keyPressNumbers(event:any) {
-    var charCode = (event.which) ? event.which : event.keyCode;
-    // Only Numbers 0-9
-    if ((charCode < 48 || charCode > 57)) {
-      event.preventDefault();
-      return false;
-    } else {
-      return true;
-    }
+  addItem(additemform: any)
+  {
+  this.addthemeservice.createTheme(this.additemform.value).subscribe(
+    (resp)=>
+    {
+      alert("Your Theme Added Sucessfully");
+      window.location.reload();
+    },
+
+    (err)=>
+    {console.log(err);}
+  );
   }
-  goToThemeList(){
+  submitForm(x:any) 
+ {
+      if(this.additemform.valid)
+      {
+        
+        if(this.share.checkstatus(this.additemform.value,this.itemdetails))
+      {
+       alert("The Item is already exist");
+      }
+      else
+      {
+        this.goToThemeList();
+        this.addItem(x);
+      }
+      }
+      else
+      {
+       alert("please enter all fields");
+      }
+ }
+  goToThemeList() {
     this.router.navigate(['/admin/viewtheme']);
   }
-  onSubmit(){
-    console.log(this.theme);
-    this.saveTheme();
+
+  additemform:any=FormGroup;
+  ngOnInit(): void {
+    
+    
+    this.additemform=new FormGroup(
+      {
+        'themeImageURL':new FormControl('',Validators.required),
+        'themeReturnGift':new FormControl('',Validators.required),
+        'themeName':new FormControl(null,Validators.required),
+        'themeVideographer':new FormControl(null,Validators.required),
+        'themePhotographer':new FormControl(null,Validators.required),
+        'themeCost':new FormControl(null,Validators.required),
+        'themeDescription':new FormControl(null,Validators.required),
+        
+      },{updateOn:'change'}
+    );
   }
 }
