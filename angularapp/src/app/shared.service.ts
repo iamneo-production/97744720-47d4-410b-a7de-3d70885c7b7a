@@ -12,7 +12,7 @@ export class SharedMenuAndItemService {
   {
     for (let i = 0; i < itemdetails.length; i++) 
        {
-         if(additemform.foodMenuItems==itemdetails[i].foodMenuItems && additemform.foodMenuType==itemdetails[i].foodMenuType && additemform.foodMenuCost==itemdetails[i].foodMenuCost && additemform.foodMenuID!=itemdetails[i].foodMenuID)
+         if(additemform.foodMenuItems.toUpperCase()==itemdetails[i].foodMenuItems.toUpperCase() && additemform.foodMenuType==itemdetails[i].foodMenuType && additemform.foodMenuCost==itemdetails[i].foodMenuCost && additemform.foodMenuID!=itemdetails[i].foodMenuID)
           return true
       }
     return false
