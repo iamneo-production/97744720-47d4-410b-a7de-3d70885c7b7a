@@ -4,12 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.TableGenerator;
 
 @Entity
 public class MenuModel {
 	
+	@TableGenerator(name = "auto_generator",initialValue = 1000)
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.AUTO,generator = "auto_generator")
 	private Integer foodMenuID;
 	
 	private String foodMenuImage;
