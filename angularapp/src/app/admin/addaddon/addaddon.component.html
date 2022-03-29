@@ -1,0 +1,48 @@
+<app-homepage></app-homepage>
+<body>
+    <div class="content">
+      <form (ngSubmit)="onSubmit()" #addAddon="ngForm">
+        <h3> Addon </h3>
+        <table>
+        <div class="Addon">
+          <tr>
+          <div class="row" [class.has-error]="fullNameControl.invalid && fullNameControl.touched">
+            <label for="addOnsName" class="control-label"></label>
+            <input type="text" name="addOnsName" required
+            placeholder="Enter addon Name" id="addOnsName" [(ngModel)]="addon.addOnsName" #fullNameControl="ngModel">
+            <span class="help-block"
+            *ngIf="fullNameControl.invalid && fullNameControl.touched">
+            Addon Name is required:
+          </span> 
+          </div>
+          <br>
+
+        <div class="row" [class.has-error]="fullCostControl.invalid && fullCostControl.touched">
+            <input type="number" placeholder="Enter addOnsPrice" id="addOnsPrice" name="addOnsPrice" required
+            [(ngModel)]="addon.addOnsPrice"  #fullCostControl="ngModel"  >
+            <span class="help-block"
+            *ngIf="fullCostControl.invalid && fullCostControl.touched">
+            Addon price details is required:
+          </span> 
+          </div>
+          <br>
+          <div class="row" [class.has-error]="fullImageUrlControl.invalid && fullImageUrlControl.touched">
+            <input type="url" placeholder="Enter the addOnsImageurl"  required id="addOnsImageurl" name="addOnsImageurl" required
+            [(ngModel)]="addon.addOnsImageurl"  #fullImageUrlControl="ngModel">
+            <span class="help-block"
+            *ngIf="fullImageUrlControl.invalid && fullImageUrlControl.touched">
+           Addon Image URL is required:
+          </span> 
+          </div>
+          <br>
+        
+         <button mat-stroked-button color="primary" class="btn btn-success" id="addAddon" [disabled]="!addon.addOnsName || !addon.addOnsPrice || !addon.addOnsImageurl" type="submit">Add addon</button>
+        </tr>
+      </div>
+      </table>
+        
+    </form>
+  </div>
+
+
+</body>

@@ -1,0 +1,23 @@
+<app-homepage></app-homepage>
+<body>
+    <div class="form">
+    <form (ngSubmit) = "onSubmit()">
+      <h3>Are you sure deleting this  {{addon.addOnsName}} addon ??</h3>
+      <br>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+      <button  (click) = "deleteAddon(addon.addonId)" class = "btn btn-info " id="delete" type ="submit"> Yes</button>
+      </div>
+      <br>
+      <div class="col">
+      <button  class = "btn btn-info" (click)="goToViewAddon()" id="No"> No</button>
+      </div> 
+      </div>
+      </div>
+
+
+    </form>
+  </div>
+    </body>

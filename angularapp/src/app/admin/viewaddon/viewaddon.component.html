@@ -1,0 +1,36 @@
+<app-homepage></app-homepage>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-sm border" id="list">
+        <br>
+        <div id="adminFoodMenu" class="container">
+            <button mat-stroked-button color="primary" class="btn btn-success" routerLink="/admin/addaddon" routerLinkActive="active" id="addaddonButton">Add Addon</button>
+          </div>
+          <br>
+    <h2> Addon List</h2>
+    <table class = "table table-bordered">
+        <thead>
+            <tr>
+                <th id="list-title">Addon Id</th>
+                <th id="list-title">Addon Name</th>
+                <th id="list-title">Addon Image</th>
+                <th id="list-title"> Addon Cost</th>
+              
+                <th colspan="2" id="list-title">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let addon of addondetails" >
+               <td id="list-title">{{addon.addonId}}</td>
+                <td id="list-title"> {{ addon. addOnsName}} </td>
+                <td id="list-title"><img src="{{addon.addOnsImageurl}}" alt="Image not found" height="70" width="150"/></td>
+                <td id="list-title"> {{ addon. addOnsPrice}} </td>
+                
+                <td><button type="button" (click) = "editAddon(addon.addonId)" class = "btn btn-primary"><i class="fa fa-pencil"></i></button></td>
+                <td><button type="button" (click) = "deleteAddon(addon.addonId)" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

@@ -1,0 +1,45 @@
+<app-homepage></app-homepage>
+<head>
+    <link rel="stylesheet" type="text/css" href="editaddon.component.css">
+  </head>
+  <div class="col-md-6 offset-md-3">
+    
+    <form (ngSubmit) = "onSubmit()">
+         <h3> EditAddon </h3>
+        <div class="form-group">
+            <input type="text" class ="text-danger" id = "addOnsName" placeholder="Enter AddOn name" 
+                [(ngModel)] = "addon.addOnsName" name = "addOnsName" required #fullNameControl="ngModel">
+                <span class="help-block"
+            *ngIf="fullNameControl.invalid && fullNameControl.touched">
+            Addon Name is required
+          </span>
+        </div>
+        <div class="form-group">
+            <input type="number" class ="form-control" id = "addOnsPrice" placeholder="Enter Addon price" 
+                [(ngModel)] = "addon.addOnsPrice" name = "addOnsPrice" required #fullCostControl="ngModel">
+                <span class="help-block"
+            *ngIf="fullCostControl.invalid && fullCostControl.touched">
+            Addon price is required
+          </span>
+        </div>
+        
+       
+        <div class="form-group"> 
+          <input type="text" class ="form-control" id = "addOnsImageurl" placeholder=" Enter Addon Image URL" 
+              [(ngModel)] = "addon.addOnsImageurl" name = "addOnsImageurl" required #fullImageUrlControl="ngModel">
+              <span class="help-block"
+          *ngIf="fullImageUrlControl.invalid && fullImageUrlControl.touched">
+          Addon Image URL is required
+        </span>
+      </div>
+  
+  
+        <div class="container">
+          <div class="row">
+            <div class="col">
+        <button class = "btn btn-success"  [disabled]="!addon.addOnsName || !addon.addOnsPrice || !addon.addOnsImageurl " type ="submit">Submit</button>
+        </div>
+    </div>
+    </div>
+    </form>
+    </div>

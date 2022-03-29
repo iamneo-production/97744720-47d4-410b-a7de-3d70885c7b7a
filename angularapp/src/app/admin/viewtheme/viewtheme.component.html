@@ -1,16 +1,14 @@
-<div id="abc" class="nav">
-    <a href="" id="XYZ">Business Meet Event</a>
-    <a href="admin/addtheme" id="adminTheme">Theme</a>
-    <a href="" id="adminFoodMenu">Food Menu</a>
-    <a href="" id="adminAddOns">Add Add-ons</a>
-    <a href="#" id="logout" routerLink="/login" routerLinkActive="active">Logout</a>
-  </div>
+<app-homepage></app-homepage>
 <head>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container-sm border" id="list">
-        
+        <br>
+        <div id="adminFoodMenu" class="container">
+            <button mat-stroked-button color="primary" class="btn btn-success" routerLink="/admin/addtheme" routerLinkActive="active" id="addThemeButton">Add Theme</button>
+          </div>
+          <br>
     <h2> Theme List</h2>
     <table class = "table table-bordered">
         <thead>
@@ -26,7 +24,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor = "let theme of themes | orderBy : key : rev | paginate: {itemsPerPage:2,currentPage:p};" >
+
                 <td id="list-title"> {{ theme.themeName }} </td>
                 <td id="list-title"> {{ theme.themeVideographer }} </td>
                 <td id="list-title"><img src="{{theme.themeImageURL}}" alt="Image not found" height="70" width="150"/></td>

@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 import { SharedthemeService } from '../../sharedtheme.service';
 import { Theme } from '../../theme';
 import { ThemeService } from '../../theme.service';
-
-
 @Component({
   selector: 'app-viewtheme',
   templateUrl: './viewtheme.component.html',
