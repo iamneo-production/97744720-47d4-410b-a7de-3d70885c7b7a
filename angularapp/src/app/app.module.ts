@@ -1,30 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddthemeComponent } from './addtheme/addtheme.component';
-import { DeletethemeComponent } from './deletetheme/deletetheme.component';
-import { ViewthemeComponent } from './viewtheme/viewtheme.component';
-import { EdithemeComponent } from './editheme/editheme.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { DeletethemeComponent } from './admin/deletetheme/deletetheme.component';
+import { ViewthemeComponent } from './admin/viewtheme/viewtheme.component';
+import { EdithemeComponent } from './admin/editheme/editheme.component';
+import { AdthemeComponent } from './admin/addtheme/addtheme.component';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddthemeComponent,
     DeletethemeComponent,
     ViewthemeComponent,
-    EdithemeComponent
+    EdithemeComponent,
+    AdthemeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    Ng2OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

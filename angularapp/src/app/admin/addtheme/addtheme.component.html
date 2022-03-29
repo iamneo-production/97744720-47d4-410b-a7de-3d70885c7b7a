@@ -1,0 +1,99 @@
+<body>
+    <div class="content">
+        <img class="img-up" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI9Mr7MBsUriP7qfRHWRiUmeC5GLFjNBQVCn0QIUYqvn-54s4rZHFfbDi82yY5KQoU4qo&usqp=CAU">
+        <form [formGroup]="additemform" #localform="ngForm" onsubmit="">
+            <table>
+                <div class="ThemeName">
+                <tr>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="themeName" class="control-label"></label>
+                            <input formControlName="themeName" type="text" #themeName (ngModel)="themeName" name="themeName" id="themeName" class="form-control" placeholder="Enter Theme Name" [class.is-invalid]="additemform.get('themeName')?.invalid && (additemform.get('themeName')?.touched || localform.submitted)">
+                            <div class="invalid-feedback">
+                                <div *ngIf="additemform.get('themeName')?.hasError('required')">*Please Enter name of the Theme</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="themeVideographer" ></label>
+                            <input formControlName="themeVideographer" type="text" #themeVideographer (ngModel)="themeVideographer" name="themeVideographer" id="themeVideographer" class="form-control" placeholder="Enter Videographer Name" [class.is-invalid]="additemform.get('themeVideographer')?.invalid && (additemform.get('themeVideographer')?.touched || localform.submitted)">
+                            <div class="invalid-feedback">
+                                <div *ngIf="additemform.get('themeVideographer')?.hasError('required')">*Please Enter name of the Videographer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="themeImageURL" ></label>
+                            <input formControlName="themeImageURL" type="text" #themeImageURL (ngModel)="themeImageURL" name="themeImageURL" id="themeImageURL" class="form-control" placeholder="Enter ImageURL Name" [class.is-invalid]="additemform.get('themeImageURL')?.invalid && (additemform.get('themeImageURL')?.touched || localform.submitted)">
+                          <div class="invalid-feedback">
+                                <div *ngIf="additemform.get('themeImageURL')?.hasError('required')">*Please Enter Image url</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="themeReturnGift" ></label>
+                            <input formControlName="themeReturnGift" type="text" #themeReturnGift (ngModel)="themeReturnGift" name="themeReturnGift" id="themeReturnGift" class="form-control" placeholder="Enter ReturnGift Name" [class.is-invalid]="additemform.get('themeReturnGift')?.invalid && (additemform.get('themeReturnGift')?.touched || localform.submitted)">
+                            <div class="invalid-feedback">
+                                <div *ngIf="additemform.get('themeReturnGift')?.hasError('required')">*Please Enter ReturnGift</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                </tr>
+                <tr>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="themePhotographer" ></label>
+                            <input formControlName="themePhotographer" type="text" #themePhotographer (ngModel)="themePhotographer" name="themePhotographer" id="themePhotographer" class="form-control" placeholder="Enter Photographer Name" [class.is-invalid]="additemform.get('themePhotographer')?.invalid && (additemform.get('themePhotographer')?.touched || localform.submitted)">
+                            <div class="invalid-feedback">
+                                <div *ngIf="additemform.get('themePhotographer')?.hasError('required')">*Please Enter name of Photographer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="themeCost" ></label>
+                            <input formControlName="themeCost" type="text" #themeCost (ngModel)="themeCost" name="themeCost" id="themeCost" class="form-control" placeholder="Enter Cost Name" [class.is-invalid]="additemform.get('themeCost')?.invalid && (additemform.get('themeCost')?.touched || localform.submitted)">
+                            <div class="invalid-feedback">
+                                <div *ngIf="additemform.get('themeCost')?.hasError('required')">*Please Enter Theme Cost</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="themeDescription" ></label>
+                            <input formControlName="themeDescription" type="text" #themeDescription (ngModel)="themeDescription" name="themeDescription" id="themeDescription" class="form-control" placeholder="Enter Description Name" [class.is-invalid]="additemform.get('themeDescription')?.invalid && (additemform.get('themeDescription')?.touched || localform.submitted)">
+                            <div class="invalid-feedback">
+                                <div *ngIf="additemform.get('themeDescription')?.hasError('required')">*Please Enter Description</div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="row">
+                       
+                        <div class="form-group">
+                        <input type="submit" [routerLink]="additemform.valid==true ? ['/admin/viewtheme']:[]" routerLinkActive="active" value="Add Theme" color="primary" class="btn btn-success"(click)="submitForm(additemform)">
+                
+                </div>
+                </div>
+                </tr>
+            </div>
+
+        </table>
+        
+        <img class="img-down" src="https://image.shutterstock.com/image-illustration/gift-yellow-boxes-blue-ribbon-260nw-1925903828.jpg">
+        </form>
+    </div>
+</body>

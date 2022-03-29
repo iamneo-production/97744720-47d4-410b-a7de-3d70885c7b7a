@@ -15,20 +15,18 @@
     <table class = "table table-bordered">
         <thead>
             <tr>
-                <th id="list-title">Theme Id</th>
-                <th id="list-title"> Name</th>
-                <th id="list-title"> Videographer Details</th>
-                <th id="list-title"> Image URL</th>
-                <th id="list-title"> Theme Return Gift</th>
-                <th id="list-title"> Photographer Details</th>
-                <th id="list-title"> Theme Cost</th>
-                <th id="list-title"> Theme Description</th>
+                <th (click)="sort('themeName')" > Name&nbsp;</th>
+                <th (click)="sort('themeVideographer')" > Videographer Details</th>
+                <th > Image URL</th>
+                <th (click)="sort('themeReturnGift')"> Theme Return Gift</th>
+                <th (click)="sort('themePhotographer')"> Photographer Details</th>
+                <th (click)="sort('themeCost')"> Theme Cost</th>
+                <th (click)="sort('themeDescription')"> Theme Description</th>
                 <th colspan="2" id="list-title">Action</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor = "let theme of themes" >
-               <td id="list-title">{{theme.themeId}}</td>
+            <tr *ngFor = "let theme of themes | orderBy : key : rev | paginate: {itemsPerPage:2,currentPage:p};" >
                 <td id="list-title"> {{ theme.themeName }} </td>
                 <td id="list-title"> {{ theme.themeVideographer }} </td>
                 <td id="list-title"><img src="{{theme.themeImageURL}}" alt="Image not found" height="70" width="150"/></td>
@@ -42,4 +40,5 @@
             </tr>
         </tbody>
     </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
     </div>

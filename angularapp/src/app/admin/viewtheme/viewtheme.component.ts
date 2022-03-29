@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Theme } from '../theme';
-import { ThemeService } from '../theme.service';
+import { SharedthemeService } from '../../sharedtheme.service';
+import { Theme } from '../../theme';
+import { ThemeService } from '../../theme.service';
+
 
 @Component({
   selector: 'app-viewtheme',
@@ -10,9 +12,9 @@ import { ThemeService } from '../theme.service';
 })
 export class ViewthemeComponent implements OnInit {
   themes!: Theme[];
-  constructor(private themeService: ThemeService,
+  p:number=1;
+  constructor(private themeService: ThemeService, private share:SharedthemeService,
     private router:Router) { }
-
   ngOnInit(): void {
     this.getthemes();
   }
@@ -26,5 +28,12 @@ export class ViewthemeComponent implements OnInit {
   }
   deleteTheme(id: number){
     this.router.navigate(['/admin/deletetheme', id]);
+  }
+  key:string='themeName';
+  rev:boolean=false;
+  sort(key)
+  {
+    this.key=key;
+    this.rev=!this.rev;
   }
 }

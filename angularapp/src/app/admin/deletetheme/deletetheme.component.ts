@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Theme } from '../theme';
-import { ThemeService } from '../theme.service';
+import { Theme } from '../../theme';
+import { ThemeService } from '../../theme.service';
 
 @Component({
   selector: 'app-deletetheme',
