@@ -16,6 +16,7 @@ import { AddaddonComponent } from './admin/addaddon/addaddon.component';
 import { DeleteaddonComponent } from './admin/deleteaddon/deleteaddon.component';
 import { EditaddonComponent } from './admin/editaddon/editaddon.component';
 import { ViewaddonComponent } from './admin/viewaddon/viewaddon.component';
+import { AddmenuComponent } from './admin/addmenu/addmenu.component';
 const routes: Routes = [
   {path:'user/home',component:HomeComponent},
   {path:'admin/homepage',component:HomepageComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'admin/addtheme',component:AdthemeComponent},
   {path:'admin/editMenu/:foodMenuID',component:EditmenuComponent},
   {path:'admin/deleteMenu/:foodMenuID',component:DeletemenuComponent},
+  {path:'admin/addMenu',component:AddmenuComponent},
   {path: 'admin/addtheme',component:AdthemeComponent},
   {path: 'admin/deletetheme/:id',component:DeletethemeComponent},
   {path: 'admin/viewtheme',component:ViewthemeComponent},
