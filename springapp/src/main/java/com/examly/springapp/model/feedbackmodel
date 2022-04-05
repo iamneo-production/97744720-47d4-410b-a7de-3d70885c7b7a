@@ -1,0 +1,68 @@
+package  com.examly.springapp.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.hibernate.annotations.GeneratorType;
+
+@Entity
+public class feedback {
+@Id
+@GeneratedValue(strategy = GenerationType.AUTO)
+private Integer Id;
+private String name;
+private String themereview;
+private String addonreview;
+private String foodmenureview;
+private String eventreview;
+public feedback() {}
+public feedback(Integer id, String name, String themereview, String addonreview, String foodmenureview,
+		String eventreview) {
+	super();
+	Id = id;
+	this.name = name;
+	this.themereview = themereview;
+	this.addonreview = addonreview;
+	this.foodmenureview = foodmenureview;
+	this.eventreview = eventreview;
+}
+public Integer getId() {
+	return Id;
+}
+public void setId(Integer id) {
+	Id = id;
+}
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getThemereview() {
+	return themereview;
+}
+public void setThemereview(String themereview) {
+	this.themereview = themereview;
+}
+public String getAddonreview() {
+	return addonreview;
+}
+public void setAddonreview(String addonreview) {
+	this.addonreview = addonreview;
+}
+public String getFoodmenureview() {
+	return foodmenureview;
+}
+public void setFoodmenureview(String foodmenureview) {
+	this.foodmenureview = foodmenureview;
+}
+public String getEventreview() {
+	return eventreview;
+}
+public void setEventreview(String eventreview) {
+	this.eventreview = eventreview;
+}
+
+}
